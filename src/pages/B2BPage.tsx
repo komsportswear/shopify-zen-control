@@ -1,0 +1,72 @@
+import { useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import B2BHero from "@/components/b2b/B2BHero";
+import B2BWhyDistribute from "@/components/b2b/B2BWhyDistribute";
+import B2BBusinessModel from "@/components/b2b/B2BBusinessModel";
+import B2BCategories from "@/components/b2b/B2BCategories";
+import B2BIdealProfile from "@/components/b2b/B2BIdealProfile";
+import B2BProcess from "@/components/b2b/B2BProcess";
+import B2BSocialProof from "@/components/b2b/B2BSocialProof";
+import B2BFAQ from "@/components/b2b/B2BFAQ";
+import B2BApplicationForm from "@/components/b2b/B2BApplicationForm";
+import B2BFinalCTA from "@/components/b2b/B2BFinalCTA";
+import B2BFooter from "@/components/b2b/B2BFooter";
+
+const B2BHeader = () => {
+  const scrollToForm = () => {
+    document.getElementById("formulario")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <header className="fixed top-0 left-0 right-0 z-50 bg-foreground/95 backdrop-blur-md border-b border-background/10">
+      <div className="container mx-auto px-6 flex items-center justify-between h-16">
+        <a href="/" className="text-background font-bold text-xl tracking-tight">KOM</a>
+        <nav className="hidden md:flex items-center gap-8">
+          <a href="#modelo-comercial" className="text-sm text-background/70 hover:text-accent transition-colors">Modelo comercial</a>
+          <a href="#formulario" className="text-sm text-background/70 hover:text-accent transition-colors">Aplicar</a>
+          <a href="/" className="text-sm text-background/70 hover:text-accent transition-colors">Tienda</a>
+        </nav>
+        <Button variant="kom" size="sm" onClick={scrollToForm}>
+          Aplicar <ArrowRight className="ml-1 h-4 w-4" />
+        </Button>
+      </div>
+    </header>
+  );
+};
+
+const B2BPage = () => {
+  useEffect(() => {
+    document.title = "Distribuidores KOM | Conviértete en aliado comercial";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute("content", "Aplica para convertirte en distribuidor de KOM Sportswear. Lleva a tu tienda una marca premium de ciclismo y running con identidad, diseño técnico y alto potencial comercial.");
+    } else {
+      const meta = document.createElement("meta");
+      meta.name = "description";
+      meta.content = "Aplica para convertirte en distribuidor de KOM Sportswear. Lleva a tu tienda una marca premium de ciclismo y running con identidad, diseño técnico y alto potencial comercial.";
+      document.head.appendChild(meta);
+    }
+  }, []);
+
+  return (
+    <div className="min-h-screen">
+      <B2BHeader />
+      <main>
+        <B2BHero />
+        <B2BWhyDistribute />
+        <B2BBusinessModel />
+        <B2BCategories />
+        <B2BIdealProfile />
+        <B2BProcess />
+        <B2BSocialProof />
+        <B2BFAQ />
+        <B2BApplicationForm />
+        <B2BFinalCTA />
+      </main>
+      <B2BFooter />
+    </div>
+  );
+};
+
+export default B2BPage;
