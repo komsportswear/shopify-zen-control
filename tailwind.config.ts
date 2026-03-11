@@ -38,6 +38,12 @@ export default {
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
+          hover: "hsl(var(--kom-accent-hover))",
+        },
+        kom: {
+          surface: "hsl(var(--kom-surface))",
+          "surface-alt": "hsl(var(--kom-surface-alt))",
+          gray: "hsl(var(--kom-gray))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
