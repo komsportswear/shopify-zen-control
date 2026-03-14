@@ -6,7 +6,7 @@ import catSocks from "@/assets/cat-socks.jpg";
 import catRunning from "@/assets/cat-running.jpg";
 
 const categories = [
-  { name: "Jerseys de ciclismo", description: "Corte técnico y materiales de alto rendimiento.", image: catJersey },
+  { name: "Ropa de ciclismo", description: "Corte técnico y materiales de alto rendimiento.", image: catJersey },
   { name: "Chaquetas clima frío", description: "Protección térmica sin sacrificar movilidad.", image: catJacket },
   { name: "Bib shorts", description: "Badanas premium y compresión inteligente.", image: catBibshorts },
   { name: "Base layers", description: "Regulación térmica y manejo de humedad.", image: catBaselayer },
