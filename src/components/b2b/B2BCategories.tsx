@@ -1,17 +1,17 @@
-import catJersey from "@/assets/cat-jersey.jpg";
-import catJacket from "@/assets/cat-jacket.jpg";
-import catBibshorts from "@/assets/cat-bibshorts.jpg";
-import catBaselayer from "@/assets/cat-baselayer.jpg";
-import catSocks from "@/assets/cat-socks.jpg";
-import catRunning from "@/assets/cat-running.jpg";
+import catRopaCiclismo from "@/assets/cat-ropa-ciclismo.jpg";
+import catAccesoriosCiclismo from "@/assets/cat-accesorios-ciclismo.jpg";
+import catRopaRunning from "@/assets/cat-ropa-running.jpg";
+import catAccesoriosRunning from "@/assets/cat-accesorios-running.jpg";
+import catMedias from "@/assets/cat-medias.jpg";
+import catPersonalizados from "@/assets/cat-personalizados.jpg";
 
 const categories = [
-  { name: "Ropa de ciclismo", description: "Corte técnico y materiales de alto rendimiento.", image: catJersey },
-  { name: "Accesorios de ciclismo", description: "Protección térmica sin sacrificar movilidad.", image: catJacket },
-  { name: "Ropa de Running", description: "Badanas premium y compresión inteligente.", image: catBibshorts },
-  { name: "Accesorios de Running", description: "Regulación térmica y manejo de humedad.", image: catBaselayer },
-  { name: "Medias", description: "Compresión y soporte para ciclismo y running.", image: catSocks },
-  { name: "Productos Personalizados", description: "Rendimiento y estilo para corredores exigentes.", image: catRunning },
+  { name: "Ropa de ciclismo", description: "Corte técnico y materiales de alto rendimiento.", image: catRopaCiclismo },
+  { name: "Accesorios de ciclismo", description: "Protección térmica sin sacrificar movilidad.", image: catAccesoriosCiclismo },
+  { name: "Ropa de Running", description: "Badanas premium y compresión inteligente.", image: catRopaRunning },
+  { name: "Accesorios de Running", description: "Regulación térmica y manejo de humedad.", image: catAccesoriosRunning },
+  { name: "Medias", description: "Compresión y soporte para ciclismo y running.", image: catMedias },
+  { name: "Productos Personalizados", description: "Rendimiento y estilo para corredores exigentes.", image: catPersonalizados },
 ];
 
 const B2BCategories = () => {
