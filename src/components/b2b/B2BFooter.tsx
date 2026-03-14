@@ -1,5 +1,5 @@
 import { Instagram, Mail, Phone, ExternalLink } from "lucide-react";
-import komLogo from "@/assets/kom-logo.webp";
+import komLogo from "@/assets/kom-logo.png";
 
 const B2BFooter = () => {
   return (
