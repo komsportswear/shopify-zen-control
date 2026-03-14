@@ -11,7 +11,7 @@ const highlights = [
 
 const distributorBenefits = [
   "Precios preferenciales para distribuidores",
-  "Diferencial claro frente al precio público",
+  "En KOM no competimos con nuestros distribuidores mediante descuentos agresivos. Protegemos su rentabilidad y el valor de la marca.",
   "Producto con alto valor percibido",
   "Material de apoyo y acompañamiento comercial",
   "Posibilidad de crecimiento conjunto a largo plazo",
