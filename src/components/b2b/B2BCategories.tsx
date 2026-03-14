@@ -7,11 +7,11 @@ import catRunning from "@/assets/cat-running.jpg";
 
 const categories = [
   { name: "Ropa de ciclismo", description: "Corte técnico y materiales de alto rendimiento.", image: catJersey },
-  { name: "Chaquetas clima frío", description: "Protección térmica sin sacrificar movilidad.", image: catJacket },
-  { name: "Bib shorts", description: "Badanas premium y compresión inteligente.", image: catBibshorts },
-  { name: "Base layers", description: "Regulación térmica y manejo de humedad.", image: catBaselayer },
-  { name: "Medias técnicas", description: "Compresión y soporte para ciclismo y running.", image: catSocks },
-  { name: "Running apparel", description: "Rendimiento y estilo para corredores exigentes.", image: catRunning },
+  { name: "Accesorios de ciclismo", description: "Protección térmica sin sacrificar movilidad.", image: catJacket },
+  { name: "Ropa de Running", description: "Badanas premium y compresión inteligente.", image: catBibshorts },
+  { name: "Accesorios de Running", description: "Regulación térmica y manejo de humedad.", image: catBaselayer },
+  { name: "Medias", description: "Compresión y soporte para ciclismo y running.", image: catSocks },
+  { name: "Productos Personalizados", description: "Rendimiento y estilo para corredores exigentes.", image: catRunning },
 ];
 
 const B2BCategories = () => {
