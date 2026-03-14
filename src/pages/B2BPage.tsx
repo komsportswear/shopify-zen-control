@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import komLogo from "@/assets/kom-logo.webp";
 import B2BHero from "@/components/b2b/B2BHero";
 import B2BIdealProfile from "@/components/b2b/B2BIdealProfile";
 import B2BWhyDistribute from "@/components/b2b/B2BWhyDistribute";
