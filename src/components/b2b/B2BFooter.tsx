@@ -1,5 +1,5 @@
 import { Instagram, Mail, Phone, ExternalLink } from "lucide-react";
-import komLogo from "@/assets/kom-logo.webp";
+import komLogo from "@/assets/kom-logo.png";
 
 const B2BFooter = () => {
   return (
@@ -8,7 +8,7 @@ const B2BFooter = () => {
         <div className="grid md:grid-cols-4 gap-10">
           {/* Logo */}
           <div className="space-y-4">
-            <img src={komLogo} alt="KOM Sportswear" className="h-12" />
+            <img src={komLogo} alt="KOM Sportswear" className="h-24" />
             <p className="text-sm text-background/60 leading-relaxed">
               Marca premium de apparel deportivo para ciclismo y running. Diseñada en Colombia.
             </p>
