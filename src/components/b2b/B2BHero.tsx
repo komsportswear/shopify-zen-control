@@ -9,11 +9,11 @@ import { toast } from "sonner";
 import heroImg from "@/assets/b2b-hero.jpg";
 
 const trustSignals = [
-  { icon: Award, label: "Marca especializada" },
-  { icon: Package, label: "Producto premium" },
-  { icon: Headphones, label: "Soporte comercial" },
-  { icon: TrendingUp, label: "Crecimiento" },
-];
+{ icon: Award, label: "Marca especializada" },
+{ icon: Package, label: "Producto premium" },
+{ icon: Headphones, label: "Soporte comercial" },
+{ icon: TrendingUp, label: "Crecimiento" }];
+
 
 interface FormData {
   nombre: string;
@@ -36,7 +36,7 @@ const initialFormData: FormData = {
   whatsapp: "",
   email: "",
   vendeDeportivas: "",
-  autorizaDatos: false,
+  autorizaDatos: false
 };
 
 const B2BHero = () => {
@@ -79,7 +79,7 @@ const B2BHero = () => {
   const updateField = (field: keyof FormData, value: string | boolean) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
     if (errors[field]) {
-      setErrors((prev) => { const next = { ...prev }; delete next[field]; return next; });
+      setErrors((prev) => {const next = { ...prev };delete next[field];return next;});
     }
   };
 
@@ -96,16 +96,16 @@ const B2BHero = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left: Form */}
           <div className="order-2 lg:order-1">
-            {isSubmitted ? (
-              <div className="bg-background/10 backdrop-blur-xl border border-background/20 rounded-3xl p-8 md:p-10 text-center space-y-6">
+            {isSubmitted ?
+            <div className="bg-background/10 backdrop-blur-xl border border-background/20 rounded-3xl p-8 md:p-10 text-center space-y-6">
                 <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mx-auto">
                   <CheckCircle2 className="h-8 w-8 text-accent" />
                 </div>
                 <h3 className="text-2xl font-bold text-background">¡Solicitud recibida!</h3>
                 <p className="text-background/70">Nuestro equipo revisará tu solicitud y se pondrá en contacto contigo.</p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="bg-background/10 backdrop-blur-xl border border-background/20 rounded-3xl p-6 md:p-8 space-y-4">
+              </div> :
+
+            <form onSubmit={handleSubmit} className="bg-background/10 backdrop-blur-xl border border-background/20 rounded-3xl p-6 md:p-8 space-y-4">
                 <h3 className="text-lg font-semibold text-background mb-2">Solicita el catálogo</h3>
 
                 <div className="grid grid-cols-2 gap-3">
@@ -154,25 +154,25 @@ const B2BHero = () => {
 
                 <div className="flex items-start gap-3 pt-1">
                   <Checkbox
-                    id="autoriza-hero"
-                    checked={formData.autorizaDatos}
-                    onCheckedChange={(checked) => updateField("autorizaDatos", !!checked)}
-                    className={`border-background/40 data-[state=checked]:bg-accent ${errors.autorizaDatos ? "border-destructive" : ""}`}
-                  />
+                  id="autoriza-hero"
+                  checked={formData.autorizaDatos}
+                  onCheckedChange={(checked) => updateField("autorizaDatos", !!checked)}
+                  className={`border-background/40 data-[state=checked]:bg-accent ${errors.autorizaDatos ? "border-destructive" : ""}`} />
+                
                   <Label htmlFor="autoriza-hero" className="text-xs text-background/60 leading-relaxed cursor-pointer">
                     Autorizo el tratamiento de mis datos personales según la política de privacidad de KOM Sportswear. *
                   </Label>
                 </div>
 
                 <Button variant="kom" size="lg" type="submit" className="w-full text-base py-6" disabled={isSubmitting}>
-                  {isSubmitting ? (
-                    <><Loader2 className="h-5 w-5 animate-spin mr-2" /> Enviando...</>
-                  ) : (
-                    <>Solicitar Catálogo para Distribuidores <ArrowRight className="ml-2 h-5 w-5" /></>
-                  )}
+                  {isSubmitting ?
+                <><Loader2 className="h-5 w-5 animate-spin mr-2" /> Enviando...</> :
+
+                <>Solicitar Catálogo para Distribuidores <ArrowRight className="ml-2 h-5 w-5" /></>
+                }
                 </Button>
               </form>
-            )}
+            }
           </div>
 
           {/* Right: Title + subtitle */}
@@ -186,25 +186,25 @@ const B2BHero = () => {
               de KOM
             </h1>
             <p className="text-lg md:text-xl text-background/70 leading-relaxed max-w-lg">
-              Lleva a tu tienda una marca de apparel deportivo premium para ciclismo y running, con diseño técnico, identidad fuerte y alto potencial comercial.
+              Vende una marca deportiva para ciclismo y running con diseño técnico, alto posicionamiento y potencial comercial.
             </p>
 
             {/* Trust signals */}
             <div className="grid grid-cols-2 gap-4 pt-4">
-              {trustSignals.map((signal) => (
-                <div key={signal.label} className="flex items-center gap-3">
+              {trustSignals.map((signal) =>
+              <div key={signal.label} className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-accent/15 flex items-center justify-center flex-shrink-0">
                     <signal.icon className="h-5 w-5 text-accent" />
                   </div>
                   <span className="text-background/80 text-sm font-medium">{signal.label}</span>
                 </div>
-              ))}
+              )}
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default B2BHero;
