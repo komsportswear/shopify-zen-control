@@ -26,7 +26,7 @@ const B2BHeader = () => {
           <a href="/" className="text-sm text-background/70 hover:text-accent transition-colors">Tienda</a>
         </nav>
         <a href="/" className="absolute left-1/2 -translate-x-1/2">
-          <img src={komLogo} alt="KOM Sportswear" className="h-8" />
+          <img src={komLogo} alt="KOM Sportswear" className="h-16" />
         </a>
         <Button variant="kom" size="sm" onClick={scrollToForm}>
           Aplicar <ArrowRight className="ml-1 h-4 w-4" />
