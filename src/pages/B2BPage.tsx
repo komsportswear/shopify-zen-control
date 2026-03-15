@@ -67,3 +67,4 @@ const B2BPage = () => {
 };
 
 export default B2BPage;
+
