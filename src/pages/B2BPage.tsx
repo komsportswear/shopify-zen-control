@@ -54,10 +54,9 @@ const B2BPage = () => {
       <B2BHeader />
       <main>
         <B2BHero />
-        <B2BIdealProfile />
-        <B2BWhyDistribute />
-        <B2BCategories />
+        <B2BValueProposition />
         <B2BProcess />
+        <B2BCategories />
         <B2BSocialProof />
         <B2BFAQ />
         <B2BFinalCTA />
