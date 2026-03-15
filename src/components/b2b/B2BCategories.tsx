@@ -16,39 +16,37 @@ const categories = [
 
 const B2BCategories = () => {
   return (
-    <section className="py-24 lg:py-32 bg-kom-surface overflow-hidden">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
-          <div className="max-w-2xl">
-            <span className="text-accent font-semibold tracking-[0.15em] uppercase text-sm">Portafolio</span>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mt-4 mb-4">
-              Categorías con potencial para tu tienda
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Producto técnico con identidad comercial fuerte, diseñado para destacar.
-            </p>
-          </div>
+    <section className="py-24 lg:py-32 bg-foreground overflow-hidden">
+      <div className="mb-16 px-6">
+        <div className="max-w-2xl">
+          <span className="text-accent font-semibold tracking-[0.15em] uppercase text-sm">Portafolio</span>
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mt-4 mb-4 text-background">
+            Categorías con potencial para tu tienda
+          </h2>
+          <p className="text-lg text-background/60">
+            Producto técnico con identidad comercial fuerte, diseñado para destacar.
+          </p>
         </div>
+      </div>
 
-        {/* Scrollable product cards with 2:3 ratio */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
-          {categories.map((cat) => (
-            <div key={cat.name} className="group cursor-pointer">
-              <div className="relative aspect-[2/3] rounded-2xl overflow-hidden mb-4">
-                <img
-                  src={cat.image}
-                  alt={cat.name}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                  <p className="text-xs text-background/80">{cat.description}</p>
-                </div>
-              </div>
-              <h3 className="font-semibold text-sm group-hover:text-accent transition-colors">{cat.name}</h3>
+      {/* Full-width grid, no gaps, no rounded corners */}
+      <div className="grid grid-cols-3 grid-rows-2">
+        {categories.map((cat) => (
+          <div key={cat.name} className="group cursor-pointer relative aspect-[2/3] overflow-hidden">
+            <img
+              src={cat.image}
+              alt={cat.name}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
+              <h3 className="font-bold text-base md:text-xl text-background mb-2">{cat.name}</h3>
+              <p className="text-sm text-background/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {cat.description}
+              </p>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   );
