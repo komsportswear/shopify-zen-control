@@ -46,15 +46,14 @@ const B2BValueProposition = () => {
           </p>
         </div>
 
-        {/* Highlights grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-          {highlights.map((h) => (
-            <div key={h.title} className="group relative p-8 rounded-3xl bg-kom-surface hover:bg-foreground transition-all duration-500 cursor-default">
-              <div className="w-12 h-12 rounded-2xl bg-accent/10 group-hover:bg-accent/20 flex items-center justify-center mb-6 transition-colors">
-                <h.icon className="h-6 w-6 text-accent" />
+        {/* ¿A quién buscamos? */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-20">
+          {profiles.map((p) => (
+            <div key={p.label} className="flex items-center gap-4 p-5 rounded-2xl bg-kom-surface border border-border">
+              <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+                <p.icon className="h-5 w-5 text-accent" />
               </div>
-              <h3 className="text-lg font-semibold mb-3 group-hover:text-background transition-colors">{h.title}</h3>
-              <p className="text-sm text-muted-foreground group-hover:text-background/60 transition-colors leading-relaxed">{h.desc}</p>
+              <span className="text-sm font-semibold">{p.label}</span>
             </div>
           ))}
         </div>
