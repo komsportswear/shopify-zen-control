@@ -95,18 +95,7 @@ const B2BValueProposition = () => {
               </div>
             </div>
 
-            {/* Ideal profiles as compact list */}
-            <div>
-              <h4 className="text-lg font-semibold mb-4 text-muted-foreground uppercase tracking-wider text-sm">¿A quién buscamos?</h4>
-              <div className="space-y-3">
-                {profiles.map((p) => (
-                  <div key={p.label} className="flex items-center gap-3 py-2 border-b border-border last:border-b-0">
-                    <p.icon className="h-4 w-4 text-accent flex-shrink-0" />
-                    <span className="text-sm font-medium">{p.label}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+
 
             <Button variant="kom" size="lg" className="text-base" onClick={scrollToForm}>
               Solicitar catálogo <ArrowRight className="ml-2 h-5 w-5" />
