@@ -26,14 +26,6 @@ const metrics = [
   { value: "COL / Latam", label: "Cobertura" },
 ];
 
-const profiles = [
-  { icon: Store, label: "Tiendas deportivas especializadas" },
-  { icon: Bike, label: "Tiendas de ciclismo" },
-  { icon: Mountain, label: "Concept stores activas / outdoor" },
-  { icon: Rocket, label: "Emprendedores con canal comercial validado" },
-  { icon: MapPin, label: "Distribuidores regionales" },
-  { icon: Megaphone, label: "Aliados con comunidad o influencia real" },
-];
 
 const B2BValueProposition = () => {
   const scrollToForm = () => {
