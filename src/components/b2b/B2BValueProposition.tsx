@@ -38,11 +38,11 @@ const B2BValueProposition = () => {
         {/* Header */}
         <div className="max-w-3xl mb-16">
           <span className="text-accent font-semibold tracking-[0.15em] uppercase text-sm">El modelo</span>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mt-4 mb-6 leading-tight">
-            Una oportunidad real de negocio con una marca de alto valor percibido
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mt-4 mb-4 leading-tight">
+            ¿A quién buscamos?
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            KOM no es solo ropa deportiva. Es una marca con identidad, diseño y funcionalidad. Buscamos aliados que quieran construir una relación comercial sostenible y rentable.
+            Buscamos aliados que quieran construir una relación comercial sostenible y rentable con una marca de alto valor percibido.
           </p>
         </div>
 
