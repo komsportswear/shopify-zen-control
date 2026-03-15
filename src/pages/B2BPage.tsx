@@ -3,10 +3,9 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import komLogo from "@/assets/kom-logo.png";
 import B2BHero from "@/components/b2b/B2BHero";
-import B2BIdealProfile from "@/components/b2b/B2BIdealProfile";
-import B2BWhyDistribute from "@/components/b2b/B2BWhyDistribute";
-import B2BCategories from "@/components/b2b/B2BCategories";
+import B2BValueProposition from "@/components/b2b/B2BValueProposition";
 import B2BProcess from "@/components/b2b/B2BProcess";
+import B2BCategories from "@/components/b2b/B2BCategories";
 import B2BSocialProof from "@/components/b2b/B2BSocialProof";
 import B2BFAQ from "@/components/b2b/B2BFAQ";
 import B2BFinalCTA from "@/components/b2b/B2BFinalCTA";
@@ -55,10 +54,9 @@ const B2BPage = () => {
       <B2BHeader />
       <main>
         <B2BHero />
-        <B2BIdealProfile />
-        <B2BWhyDistribute />
-        <B2BCategories />
+        <B2BValueProposition />
         <B2BProcess />
+        <B2BCategories />
         <B2BSocialProof />
         <B2BFAQ />
         <B2BFinalCTA />

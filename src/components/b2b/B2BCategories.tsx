@@ -16,7 +16,7 @@ const categories = [
 
 const B2BCategories = () => {
   return (
-    <section className="py-24 lg:py-32 bg-foreground overflow-hidden">
+    <section className="pt-24 lg:pt-32 bg-foreground overflow-hidden">
       <div className="mb-16 px-6">
         <div className="max-w-2xl">
           <span className="text-accent font-semibold tracking-[0.15em] uppercase text-sm">Portafolio</span>
