@@ -1,12 +1,14 @@
-import { Check, ArrowRight, Layers, Palette, Users, RefreshCw, Store, Bike, Mountain, Rocket, MapPin, Megaphone } from "lucide-react";
+import { Check, ArrowRight, Store, Bike, Mountain, Rocket, MapPin, Megaphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import textureImg from "@/assets/b2b-texture.jpg";
 
-const highlights = [
-  { icon: Layers, title: "Producto técnico premium", desc: "Prendas especializadas para ciclismo y running, con foco en clima frío y alto rendimiento." },
-  { icon: Palette, title: "Marca con identidad fuerte", desc: "Propuesta visual sólida que vende mejor en punto físico y digital." },
-  { icon: Users, title: "Comunidad deportiva activa", desc: "Conecta con ciclistas y runners que valoran calidad y estética." },
-  { icon: RefreshCw, title: "Alta rotación y recompra", desc: "Productos con potencial de compra recurrente por parte del cliente final." },
+const profiles = [
+  { icon: Store, label: "Tiendas deportivas especializadas" },
+  { icon: Bike, label: "Tiendas de ciclismo" },
+  { icon: Mountain, label: "Concept stores activas / outdoor" },
+  { icon: Rocket, label: "Emprendedores con canal comercial validado" },
+  { icon: MapPin, label: "Distribuidores regionales" },
+  { icon: Megaphone, label: "Aliados con comunidad o influencia real" },
 ];
 
 const distributorBenefits = [
@@ -24,14 +26,6 @@ const metrics = [
   { value: "COL / Latam", label: "Cobertura" },
 ];
 
-const profiles = [
-  { icon: Store, label: "Tiendas deportivas especializadas" },
-  { icon: Bike, label: "Tiendas de ciclismo" },
-  { icon: Mountain, label: "Concept stores activas / outdoor" },
-  { icon: Rocket, label: "Emprendedores con canal comercial validado" },
-  { icon: MapPin, label: "Distribuidores regionales" },
-  { icon: Megaphone, label: "Aliados con comunidad o influencia real" },
-];
 
 const B2BValueProposition = () => {
   const scrollToForm = () => {
@@ -44,23 +38,22 @@ const B2BValueProposition = () => {
         {/* Header */}
         <div className="max-w-3xl mb-16">
           <span className="text-accent font-semibold tracking-[0.15em] uppercase text-sm">El modelo</span>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mt-4 mb-6 leading-tight">
-            Una oportunidad real de negocio con una marca de alto valor percibido
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mt-4 mb-4 leading-tight">
+            ¿A quién buscamos?
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            KOM no es solo ropa deportiva. Es una marca con identidad, diseño y funcionalidad. Buscamos aliados que quieran construir una relación comercial sostenible y rentable.
+            Buscamos aliados que quieran construir una relación comercial sostenible y rentable con una marca de alto valor percibido.
           </p>
         </div>
 
-        {/* Highlights grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-          {highlights.map((h) => (
-            <div key={h.title} className="group relative p-8 rounded-3xl bg-kom-surface hover:bg-foreground transition-all duration-500 cursor-default">
-              <div className="w-12 h-12 rounded-2xl bg-accent/10 group-hover:bg-accent/20 flex items-center justify-center mb-6 transition-colors">
-                <h.icon className="h-6 w-6 text-accent" />
+        {/* ¿A quién buscamos? */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-20">
+          {profiles.map((p) => (
+            <div key={p.label} className="flex items-center gap-4 p-5 rounded-2xl bg-kom-surface border border-border">
+              <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+                <p.icon className="h-5 w-5 text-accent" />
               </div>
-              <h3 className="text-lg font-semibold mb-3 group-hover:text-background transition-colors">{h.title}</h3>
-              <p className="text-sm text-muted-foreground group-hover:text-background/60 transition-colors leading-relaxed">{h.desc}</p>
+              <span className="text-sm font-semibold">{p.label}</span>
             </div>
           ))}
         </div>
@@ -102,18 +95,7 @@ const B2BValueProposition = () => {
               </div>
             </div>
 
-            {/* Ideal profiles as compact list */}
-            <div>
-              <h4 className="text-lg font-semibold mb-4 text-muted-foreground uppercase tracking-wider text-sm">¿A quién buscamos?</h4>
-              <div className="space-y-3">
-                {profiles.map((p) => (
-                  <div key={p.label} className="flex items-center gap-3 py-2 border-b border-border last:border-b-0">
-                    <p.icon className="h-4 w-4 text-accent flex-shrink-0" />
-                    <span className="text-sm font-medium">{p.label}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+
 
             <Button variant="kom" size="lg" className="text-base" onClick={scrollToForm}>
               Solicitar catálogo <ArrowRight className="ml-2 h-5 w-5" />
