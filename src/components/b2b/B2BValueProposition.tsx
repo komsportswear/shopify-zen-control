@@ -1,12 +1,14 @@
-import { Check, ArrowRight, Layers, Palette, Users, RefreshCw, Store, Bike, Mountain, Rocket, MapPin, Megaphone } from "lucide-react";
+import { Check, ArrowRight, Store, Bike, Mountain, Rocket, MapPin, Megaphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import textureImg from "@/assets/b2b-texture.jpg";
 
-const highlights = [
-  { icon: Layers, title: "Producto técnico premium", desc: "Prendas especializadas para ciclismo y running, con foco en clima frío y alto rendimiento." },
-  { icon: Palette, title: "Marca con identidad fuerte", desc: "Propuesta visual sólida que vende mejor en punto físico y digital." },
-  { icon: Users, title: "Comunidad deportiva activa", desc: "Conecta con ciclistas y runners que valoran calidad y estética." },
-  { icon: RefreshCw, title: "Alta rotación y recompra", desc: "Productos con potencial de compra recurrente por parte del cliente final." },
+const profiles = [
+  { icon: Store, label: "Tiendas deportivas especializadas" },
+  { icon: Bike, label: "Tiendas de ciclismo" },
+  { icon: Mountain, label: "Concept stores activas / outdoor" },
+  { icon: Rocket, label: "Emprendedores con canal comercial validado" },
+  { icon: MapPin, label: "Distribuidores regionales" },
+  { icon: Megaphone, label: "Aliados con comunidad o influencia real" },
 ];
 
 const distributorBenefits = [
