@@ -3,10 +3,10 @@ import { Button } from "@/components/ui/button";
 import textureImg from "@/assets/b2b-texture.jpg";
 
 const profiles = [
-  { icon: Store, label: "Tiendas deportivas especializadas" },
+  { icon: Store, label: "Tiendas deportivas" },
   { icon: Bike, label: "Tiendas de ciclismo" },
-  { icon: Mountain, label: "Concept stores activas / outdoor" },
-  { icon: Rocket, label: "Emprendedores con canal comercial validado" },
+  { icon: Rocket, label: "Emprendedores" },
+  { icon: Mountain, label: "Eventos" },
   { icon: MapPin, label: "Distribuidores regionales" },
   { icon: Megaphone, label: "Aliados con comunidad o influencia real" },
 ];
@@ -20,9 +20,9 @@ const distributorBenefits = [
 ];
 
 const metrics = [
-  { value: "[COP X]", label: "Pedido mínimo" },
-  { value: "[X%]", label: "Margen estimado" },
-  { value: "[X días]", label: "Activación" },
+  { value: "$500.000", label: "Pedido mínimo" },
+  { value: "Hasta 40%", label: "DE MARGEN DE GANANCIA" },
+  { value: "1 DÍA", label: "PARA ACTIVACIÓN" },
   { value: "COL / Latam", label: "Cobertura" },
 ];
 

@@ -20,11 +20,9 @@ const B2BCategories = () => {
       <div className="mb-16 px-6">
         <div className="max-w-2xl">
           <span className="text-accent font-semibold tracking-[0.15em] uppercase text-sm">Portafolio</span>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mt-4 mb-4 text-background">Categorías con potencial
-
-          </h2>
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mt-4 mb-4 text-background">Categorías con potencial</h2>
           <p className="text-lg text-background/60">
-
+            Tenemos un portafolio diversificado que se adapta a tu público y necesidades.
           </p>
         </div>
       </div>

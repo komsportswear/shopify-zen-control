@@ -2,10 +2,10 @@ import { Package, MapPin, Users, LayoutGrid } from "lucide-react";
 import runningImg from "@/assets/b2b-running.jpg";
 
 const proofPoints = [
-  { icon: Package, value: "+[X]", label: "Referencias activas" },
-  { icon: MapPin, value: "+[X]", label: "Puntos de presencia" },
-  { icon: Users, value: "+[X]", label: "Clientes impactados" },
-  { icon: LayoutGrid, value: "+[X]", label: "Categorías" },
+  { icon: Package, value: "+200", label: "Referencias activas" },
+  { icon: MapPin, value: "+10", label: "Años de recorrido" },
+  { icon: Users, value: "+15.000", label: "Clientes impactados" },
+  { icon: LayoutGrid, value: "+15", label: "Países" },
 ];
 
 const trustBlocks = [
