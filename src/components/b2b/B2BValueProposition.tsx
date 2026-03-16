@@ -3,10 +3,10 @@ import { Button } from "@/components/ui/button";
 import textureImg from "@/assets/b2b-texture.jpg";
 
 const profiles = [
-  { icon: Store, label: "Tiendas deportivas especializadas" },
+  { icon: Store, label: "Tiendas deportivas" },
   { icon: Bike, label: "Tiendas de ciclismo" },
-  { icon: Mountain, label: "Concept stores activas / outdoor" },
-  { icon: Rocket, label: "Emprendedores con canal comercial validado" },
+  { icon: Rocket, label: "Emprendedores" },
+  { icon: Mountain, label: "Eventos" },
   { icon: MapPin, label: "Distribuidores regionales" },
   { icon: Megaphone, label: "Aliados con comunidad o influencia real" },
 ];
