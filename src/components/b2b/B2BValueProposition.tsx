@@ -61,8 +61,8 @@ const B2BValueProposition = () => {
         {/* Split layout: image + benefits + profiles */}
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Image with metrics */}
-          <div className="relative">
-            <div className="rounded-3xl overflow-hidden aspect-[4/5] relative">
+          <div className="relative h-full">
+            <div className="rounded-3xl overflow-hidden h-full min-h-[400px] relative">
               <img src={textureImg} alt="Detalle de producto KOM" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-foreground/20 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-8">
