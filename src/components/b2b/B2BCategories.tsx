@@ -16,7 +16,7 @@ const categories = [
 
 const B2BCategories = () => {
   return (
-    <section className="pt-24 lg:pt-32 bg-foreground overflow-hidden">
+    <section id="categorias" className="pt-24 lg:pt-32 bg-foreground overflow-hidden">
       <div className="mb-16 px-6">
         <div className="max-w-2xl">
           <span className="text-accent font-semibold tracking-[0.15em] uppercase text-sm">Portafolio</span>
@@ -30,7 +30,7 @@ const B2BCategories = () => {
       </div>
 
       {/* Full-width grid, no gaps, no rounded corners */}
-      <div className="grid grid-cols-3 grid-rows-2">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
         {categories.map((cat) => (
           <div key={cat.name} className="group cursor-pointer relative aspect-[2/3] overflow-hidden">
             <img

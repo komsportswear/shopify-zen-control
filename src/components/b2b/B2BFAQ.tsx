@@ -42,7 +42,7 @@ const faqs = [
 
 const B2BFAQ = () => {
   return (
-    <section className="py-24 lg:py-32 bg-kom-surface">
+    <section id="faq" className="py-24 lg:py-32 bg-kom-surface">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-center mb-12">
