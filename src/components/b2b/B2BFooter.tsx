@@ -30,11 +30,19 @@ const B2BFooter = () => {
           <div className="space-y-4">
             <h4 className="text-sm font-semibold uppercase tracking-wider text-background/50">Contacto comercial</h4>
             <div className="space-y-3">
-              <a href="https://wa.me/[WHATSAPP_B2B]" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-background/70 hover:text-accent transition-colors">
-                <Phone className="h-4 w-4" /> [WhatsApp B2B]
+              <p className="text-xs font-semibold uppercase tracking-wider text-background/40">Ventas Colombia</p>
+              <a href="https://wa.me/573057884628" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-background/70 hover:text-accent transition-colors">
+                <Phone className="h-4 w-4" /> Paola Álvarez
               </a>
-              <a href="mailto:[CORREO_B2B]" className="flex items-center gap-2 text-sm text-background/70 hover:text-accent transition-colors">
-                <Mail className="h-4 w-4" /> [Correo B2B]
+              <a href="https://wa.me/573125808450" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-background/70 hover:text-accent transition-colors">
+                <Phone className="h-4 w-4" /> Angie Andrade
+              </a>
+              <p className="text-xs font-semibold uppercase tracking-wider text-background/40 pt-1">Ventas internacionales</p>
+              <a href="https://wa.me/573107269301" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-background/70 hover:text-accent transition-colors">
+                <Phone className="h-4 w-4" /> Camila Andrade
+              </a>
+              <a href="mailto:ventas@komsportswear.com" className="flex items-center gap-2 text-sm text-background/70 hover:text-accent transition-colors pt-1">
+                <Mail className="h-4 w-4" /> ventas@komsportswear.com
               </a>
             </div>
           </div>
