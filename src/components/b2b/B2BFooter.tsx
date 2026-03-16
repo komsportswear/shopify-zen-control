@@ -10,7 +10,7 @@ const B2BFooter = () => {
           <div className="space-y-4">
             <img src={komLogo} alt="KOM Sportswear" className="h-24" />
             <p className="text-sm text-background/60 leading-relaxed">
-              Marca premium de apparel deportivo para ciclismo y running. Diseñada en Colombia.
+              Marca deportiva para ciclismo y running. Diseñada en Colombia.
             </p>
           </div>
 
@@ -60,8 +60,8 @@ const B2BFooter = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>);
+
 };
 
 export default B2BFooter;
