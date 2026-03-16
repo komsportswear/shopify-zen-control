@@ -18,9 +18,11 @@ const B2BFooter = () => {
           <div className="space-y-4">
             <h4 className="text-sm font-semibold uppercase tracking-wider text-background/50">Navegación</h4>
             <div className="space-y-2">
-              <a href="/" className="block text-sm text-background/70 hover:text-accent transition-colors">Tienda</a>
-              <a href="/distribuidores" className="block text-sm text-background/70 hover:text-accent transition-colors">Distribuidores</a>
-              <a href="#formulario" className="block text-sm text-background/70 hover:text-accent transition-colors">Aplicar</a>
+              <a href="#modelo-comercial" className="block text-sm text-background/70 hover:text-accent transition-colors">Modelo</a>
+              <a href="#proceso" className="block text-sm text-background/70 hover:text-accent transition-colors">Proceso</a>
+              <a href="#categorias" className="block text-sm text-background/70 hover:text-accent transition-colors">Categorías</a>
+              <a href="#testimonios" className="block text-sm text-background/70 hover:text-accent transition-colors">Testimonios</a>
+              <a href="#faq" className="block text-sm text-background/70 hover:text-accent transition-colors">FAQ</a>
             </div>
           </div>
 
