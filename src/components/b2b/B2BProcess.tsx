@@ -29,7 +29,7 @@ const steps = [
 
 const B2BProcess = () => {
   return (
-    <section className="pt-12 lg:pt-16 pb-20 lg:pb-24 bg-kom-surface">
+    <section id="proceso" className="pt-12 lg:pt-16 pb-20 lg:pb-24 bg-kom-surface">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
           <span className="text-accent font-semibold tracking-[0.15em] uppercase text-sm">Cómo empezar</span>
