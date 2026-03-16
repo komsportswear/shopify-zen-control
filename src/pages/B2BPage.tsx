@@ -19,10 +19,12 @@ const B2BHeader = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-foreground/95 backdrop-blur-md border-b border-background/10">
       <div className="container mx-auto px-6 flex items-center justify-between h-16">
-        <nav className="hidden md:flex items-center gap-8">
-          <a href="#modelo-comercial" className="text-sm text-background/70 hover:text-accent transition-colors">Modelo comercial</a>
-          <a href="#formulario" className="text-sm text-background/70 hover:text-accent transition-colors">Aplicar</a>
-          <a href="/" className="text-sm text-background/70 hover:text-accent transition-colors">Tienda</a>
+        <nav className="hidden md:flex items-center gap-6">
+          <a href="#modelo-comercial" className="text-sm text-background/70 hover:text-accent transition-colors">Modelo</a>
+          <a href="#proceso" className="text-sm text-background/70 hover:text-accent transition-colors">Proceso</a>
+          <a href="#categorias" className="text-sm text-background/70 hover:text-accent transition-colors">Categorías</a>
+          <a href="#testimonios" className="text-sm text-background/70 hover:text-accent transition-colors">Testimonios</a>
+          <a href="#faq" className="text-sm text-background/70 hover:text-accent transition-colors">FAQ</a>
         </nav>
         <a href="/" className="absolute left-1/2 -translate-x-1/2">
           <img src={komLogo} alt="KOM Sportswear" className="h-16" />

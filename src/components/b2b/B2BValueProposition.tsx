@@ -59,7 +59,7 @@ const B2BValueProposition = () => {
         </div>
 
         {/* Split layout: image + benefits + profiles */}
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-16 items-stretch">
           {/* Image with metrics */}
           <div className="relative h-full">
             <div className="rounded-3xl overflow-hidden h-full min-h-[400px] relative">
