@@ -188,6 +188,13 @@ const B2BHero = () => {
             <p className="text-lg md:text-xl text-background/70 leading-relaxed max-w-lg">
               Vende una marca deportiva para ciclismo y running con diseño técnico, alto posicionamiento y potencial comercial.
             </p>
+            <div className="flex items-center gap-2">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent"></span>
+              </span>
+              <span className="text-sm text-accent font-medium tracking-wide">Selección activa — cupos limitados por ciudad</span>
+            </div>
 
             {/* Trust signals */}
             <div className="grid grid-cols-2 gap-4 pt-4">
