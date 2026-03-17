@@ -25,7 +25,7 @@ const B2BFinalCTA = () => {
               variant="kom-white"
               size="lg"
               className="text-base px-8 py-6"
-              onClick={() => window.open("https://wa.me/[WHATSAPP_B2B]", "_blank")}
+              onClick={() => window.open("https://wa.me/573057884628?text=Hola%2C%20quiero%20información%20sobre%20distribución%20de%20KOM", "_blank")}
             >
               <MessageCircle className="mr-2 h-5 w-5" />
               Hablar por WhatsApp
