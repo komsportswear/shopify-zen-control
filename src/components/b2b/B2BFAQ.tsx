@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     question: "¿Cuánto tarda el proceso de evaluación?",
-    answer: "El proceso suele tomar entre [X] días hábiles desde que recibimos tu aplicación completa. Nos comunicaremos contigo si encontramos afinidad comercial.",
+    answer: "El proceso suele tomar entre 5 y 10 días hábiles desde que recibimos tu aplicación completa. Nos comunicaremos contigo si encontramos afinidad comercial.",
   },
   {
     question: "¿Puedo aplicar si vendo principalmente por redes sociales o e-commerce?",

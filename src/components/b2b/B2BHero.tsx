@@ -70,10 +70,21 @@ const B2BHero = () => {
       return;
     }
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    toast.success("¡Solicitud enviada!");
+    try {
+      const WEBHOOK_URL = "https://script.google.com/macros/s/PLACEHOLDER/exec";
+      await fetch(WEBHOOK_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      setIsSubmitted(true);
+      toast.success("¡Solicitud enviada!");
+    } catch {
+      toast.error("Error al enviar. Intenta de nuevo.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const updateField = (field: keyof FormData, value: string | boolean) => {

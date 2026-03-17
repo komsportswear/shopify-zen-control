@@ -21,7 +21,7 @@ const B2BFooter = () => {
               <a href="#modelo-comercial" className="block text-sm text-background/70 hover:text-accent transition-colors">Modelo</a>
               <a href="#proceso" className="block text-sm text-background/70 hover:text-accent transition-colors">Proceso</a>
               <a href="#categorias" className="block text-sm text-background/70 hover:text-accent transition-colors">Categorías</a>
-              <a href="#testimonios" className="block text-sm text-background/70 hover:text-accent transition-colors">Testimonios</a>
+              <a href="#testimonios" className="block text-sm text-background/70 hover:text-accent transition-colors">Trayectoria</a>
               <a href="#faq" className="block text-sm text-background/70 hover:text-accent transition-colors">FAQ</a>
             </div>
           </div>

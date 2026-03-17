@@ -7,7 +7,7 @@ const B2BFinalCTA = () => {
   };
 
   return (
-    <section className="py-24 lg:py-32 bg-foreground text-background">
+    <section className="py-16 lg:py-24 bg-foreground text-background">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center space-y-8">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight">
