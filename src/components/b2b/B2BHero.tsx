@@ -70,10 +70,21 @@ const B2BHero = () => {
       return;
     }
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    toast.success("¡Solicitud enviada!");
+    try {
+      const WEBHOOK_URL = "https://script.google.com/macros/s/PLACEHOLDER/exec";
+      await fetch(WEBHOOK_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      setIsSubmitted(true);
+      toast.success("¡Solicitud enviada!");
+    } catch {
+      toast.error("Error al enviar. Intenta de nuevo.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const updateField = (field: keyof FormData, value: string | boolean) => {
@@ -188,6 +199,13 @@ const B2BHero = () => {
             <p className="text-lg md:text-xl text-background/70 leading-relaxed max-w-lg">
               Vende una marca deportiva para ciclismo y running con diseño técnico, alto posicionamiento y potencial comercial.
             </p>
+            <div className="flex items-center gap-2">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent"></span>
+              </span>
+              <span className="text-sm text-accent font-medium tracking-wide">Selección activa — cupos limitados por ciudad</span>
+            </div>
 
             {/* Trust signals */}
             <div className="grid grid-cols-2 gap-4 pt-4">
@@ -203,8 +221,15 @@ const B2BHero = () => {
           </div>
         </div>
       </div>
-    </section>);
-
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 animate-bounce">
+        <span className="text-xs text-background/50 tracking-widest uppercase">Conoce más</span>
+        <svg className="w-5 h-5 text-background/50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
+    </section>
+  );
 };
 
 export default B2BHero;

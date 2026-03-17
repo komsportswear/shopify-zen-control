@@ -17,7 +17,7 @@ const trustBlocks = [
 
 const B2BSocialProof = () => {
   return (
-    <section id="testimonios" className="py-24 lg:py-32 bg-foreground text-background">
+    <section id="testimonios" className="py-24 lg:py-32 bg-foreground text-background border-b border-accent/20">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left */}
