@@ -3,6 +3,14 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Menu, X } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import komLogo from "@/assets/kom-logo.png";
+import B2BHero from "@/components/b2b/B2BHero";
+import B2BValueProposition from "@/components/b2b/B2BValueProposition";
+import B2BProcess from "@/components/b2b/B2BProcess";
+import B2BCategories from "@/components/b2b/B2BCategories";
+import B2BSocialProof from "@/components/b2b/B2BSocialProof";
+import B2BFAQ from "@/components/b2b/B2BFAQ";
+import B2BFinalCTA from "@/components/b2b/B2BFinalCTA";
+import B2BFooter from "@/components/b2b/B2BFooter";
 
 const navLinks = [
   { href: "#modelo-comercial", label: "Modelo" },
