@@ -53,6 +53,35 @@ const initialFormData: FormData = {
   autorizaDatos: false,
 };
 
+// Sub-componente para los beneficios/señales de confianza
+// Esto nos permite mostrarlos abajo en móvil y a la derecha en desktop sin repetir código.
+const TrustSignalsBlock = ({ className }: { className?: string }) => (
+  <div className={className}>
+    <div className="flex items-center gap-2">
+      <span className="relative flex h-2.5 w-2.5 shrink-0">
+        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75"></span>
+        <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-accent"></span>
+      </span>
+      <span className="text-xs font-medium tracking-wide text-accent sm:text-sm">
+        Selección activa — cupos limitados por ciudad
+      </span>
+    </div>
+
+    <div className="grid grid-cols-1 gap-3 pt-2 sm:grid-cols-2 sm:gap-4">
+      {trustSignals.map((signal) => (
+        <div key={signal.label} className="flex items-center gap-3">
+          <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-accent/15">
+            <signal.icon className="h-5 w-5 text-accent" />
+          </div>
+          <span className="text-sm font-medium text-background/80">
+            {signal.label}
+          </span>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
 const B2BHero = () => {
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -155,8 +184,8 @@ const B2BHero = () => {
       <div className="relative z-10 w-full mx-auto px-4 py-16 sm:max-w-[640px] md:max-w-none md:px-6 lg:py-24">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-20 xl:gap-24">
           
-          {/* TEXTO - En móviles pasa a ser order-2 (abajo), en escritorio es order-1 (izquierda) */}
-          <div className="order-2 lg:order-1 space-y-6 sm:space-y-8 px-1 md:px-0">
+          {/* TEXTO PRINCIPAL - Arriba en móvil (order-1), a la Derecha en escritorio (lg:order-2) */}
+          <div className="order-1 lg:order-2 space-y-6 sm:space-y-8 px-1 md:px-0">
             <span className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-accent sm:text-sm">
               Programa de distribuidores
             </span>
@@ -174,32 +203,12 @@ const B2BHero = () => {
               técnico, alto posicionamiento y potencial comercial.
             </p>
 
-            <div className="flex items-center gap-2">
-              <span className="relative flex h-2.5 w-2.5 shrink-0">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75"></span>
-                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-accent"></span>
-              </span>
-              <span className="text-xs font-medium tracking-wide text-accent sm:text-sm">
-                Selección activa — cupos limitados por ciudad
-              </span>
-            </div>
-
-            <div className="grid grid-cols-1 gap-3 pt-2 sm:grid-cols-2 sm:gap-4 sm:pt-4">
-              {trustSignals.map((signal) => (
-                <div key={signal.label} className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-accent/15">
-                    <signal.icon className="h-5 w-5 text-accent" />
-                  </div>
-                  <span className="text-sm font-medium text-background/80">
-                    {signal.label}
-                  </span>
-                </div>
-              ))}
-            </div>
+            {/* TRUST SIGNALS - Visibles aquí SOLO en Desktop (ocultos en móvil) */}
+            <TrustSignalsBlock className="hidden lg:block space-y-4 pt-2 sm:pt-4" />
           </div>
 
-          {/* FORMULARIO - En móviles pasa a ser order-1 (arriba), en escritorio es order-2 (derecha) */}
-          <div className="order-1 lg:order-2 w-full max-w-md mx-auto lg:max-w-none">
+          {/* FORMULARIO - Debajo del título en móvil (order-2), a la Izquierda en escritorio (lg:order-1) */}
+          <div className="order-2 lg:order-1 w-full max-w-md mx-auto lg:max-w-none">
             {isSubmitted ? (
               <div className="rounded-2xl border border-background/20 bg-background/10 p-6 text-center backdrop-blur-xl sm:rounded-3xl sm:p-8 md:p-10 w-full">
                 <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-accent/20 sm:h-16 sm:w-16">
@@ -392,8 +401,11 @@ const B2BHero = () => {
                 </Button>
               </form>
             )}
-          </div>
 
+            {/* TRUST SIGNALS - Visibles aquí SOLO en Móvil (debajo del formulario) */}
+            <TrustSignalsBlock className="mt-8 block lg:hidden space-y-4" />
+
+          </div>
         </div>
       </div>
     </section>
