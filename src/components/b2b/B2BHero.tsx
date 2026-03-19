@@ -142,7 +142,7 @@ const B2BHero = () => {
   };
 
   return (
-    <section id="formulario" className="relative overflow-hidden">
+    <section id="formulario" className="relative overflow-hidden w-full">
       <div className="absolute inset-0">
         <img
           src={heroImg}
@@ -152,11 +152,11 @@ const B2BHero = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/95 via-foreground/80 to-foreground/55" />
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 py-20 sm:px-6 sm:py-24 lg:px-6 lg:py-24">
+      <div className="relative z-10 w-full mx-auto px-3 py-20 sm:max-w-[640px] md:max-w-none md:px-6 lg:py-24">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-20 xl:gap-24">
-          <div className="order-2 lg:order-1">
+          <div className="order-2 lg:order-1 w-full max-w-md mx-auto lg:max-w-none">
             {isSubmitted ? (
-              <div className="rounded-2xl border border-background/20 bg-background/10 p-6 text-center backdrop-blur-xl sm:rounded-3xl sm:p-8 md:p-10">
+              <div className="rounded-2xl border border-background/20 bg-background/10 p-6 text-center backdrop-blur-xl sm:rounded-3xl sm:p-8 md:p-10 w-full">
                 <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-accent/20 sm:h-16 sm:w-16">
                   <CheckCircle2 className="h-7 w-7 text-accent sm:h-8 sm:w-8" />
                 </div>
@@ -171,19 +171,19 @@ const B2BHero = () => {
             ) : (
               <form
                 onSubmit={handleSubmit}
-                className="space-y-4 rounded-2xl border border-background/20 bg-background/10 p-4 backdrop-blur-xl sm:rounded-3xl sm:p-6 md:p-8"
+                className="space-y-4 rounded-xl border border-background/20 bg-background/10 p-5 backdrop-blur-xl sm:rounded-3xl sm:p-6 md:p-8 w-full"
               >
                 <h3 className="mb-2 text-lg font-semibold text-background">
                   Solicita el catálogo
                 </h3>
 
-                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                  <div>
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 w-full">
+                  <div className="w-full">
                     <Input
                       placeholder="Nombre y apellido *"
                       value={formData.nombre}
                       onChange={(e) => updateField("nombre", e.target.value)}
-                      className={`h-11 bg-background/10 text-background placeholder:text-background/50 ${
+                      className={`h-11 w-full bg-background/10 text-background placeholder:text-background/50 ${
                         errors.nombre
                           ? "border-destructive"
                           : "border-background/20"
@@ -191,22 +191,22 @@ const B2BHero = () => {
                     />
                   </div>
 
-                  <div>
+                  <div className="w-full">
                     <Input
                       placeholder="Nombre de tienda"
                       value={formData.tienda}
                       onChange={(e) => updateField("tienda", e.target.value)}
-                      className="h-11 border-background/20 bg-background/10 text-background placeholder:text-background/50"
+                      className="h-11 w-full border-background/20 bg-background/10 text-background placeholder:text-background/50"
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 w-full">
                   <Input
                     placeholder="Ciudad *"
                     value={formData.ciudad}
                     onChange={(e) => updateField("ciudad", e.target.value)}
-                    className={`h-11 bg-background/10 text-background placeholder:text-background/50 ${
+                    className={`h-11 w-full bg-background/10 text-background placeholder:text-background/50 ${
                       errors.ciudad
                         ? "border-destructive"
                         : "border-background/20"
@@ -217,7 +217,7 @@ const B2BHero = () => {
                     placeholder="País *"
                     value={formData.pais}
                     onChange={(e) => updateField("pais", e.target.value)}
-                    className={`h-11 bg-background/10 text-background placeholder:text-background/50 ${
+                    className={`h-11 w-full bg-background/10 text-background placeholder:text-background/50 ${
                       errors.pais
                         ? "border-destructive"
                         : "border-background/20"
@@ -225,44 +225,46 @@ const B2BHero = () => {
                   />
                 </div>
 
-                <Select
-                  value={formData.tipoNegocio}
-                  onValueChange={(v) => updateField("tipoNegocio", v)}
-                >
-                  <SelectTrigger
-                    className={`h-11 bg-background/10 text-background ${
-                      errors.tipoNegocio
-                        ? "border-destructive"
-                        : "border-background/20"
-                    }`}
+                <div className="w-full">
+                  <Select
+                    value={formData.tipoNegocio}
+                    onValueChange={(v) => updateField("tipoNegocio", v)}
                   >
-                    <SelectValue placeholder="Tipo de negocio *" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="tienda-deportiva">
-                      Tienda deportiva
-                    </SelectItem>
-                    <SelectItem value="tienda-ciclismo">
-                      Tienda de ciclismo
-                    </SelectItem>
-                    <SelectItem value="concept-store">Concept store</SelectItem>
-                    <SelectItem value="distribuidor">
-                      Distribuidor regional
-                    </SelectItem>
-                    <SelectItem value="ecommerce">E-commerce</SelectItem>
-                    <SelectItem value="emprendedor">
-                      Emprendedor independiente
-                    </SelectItem>
-                    <SelectItem value="otro">Otro</SelectItem>
-                  </SelectContent>
-                </Select>
+                    <SelectTrigger
+                      className={`h-11 w-full bg-background/10 text-background ${
+                        errors.tipoNegocio
+                          ? "border-destructive"
+                          : "border-background/20"
+                      }`}
+                    >
+                      <SelectValue placeholder="Tipo de negocio *" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="tienda-deportiva">
+                        Tienda deportiva
+                      </SelectItem>
+                      <SelectItem value="tienda-ciclismo">
+                        Tienda de ciclismo
+                      </SelectItem>
+                      <SelectItem value="concept-store">Concept store</SelectItem>
+                      <SelectItem value="distribuidor">
+                        Distribuidor regional
+                      </SelectItem>
+                      <SelectItem value="ecommerce">E-commerce</SelectItem>
+                      <SelectItem value="emprendedor">
+                        Emprendedor independiente
+                      </SelectItem>
+                      <SelectItem value="otro">Otro</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
 
-                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 w-full">
                   <Input
                     placeholder="WhatsApp *"
                     value={formData.whatsapp}
                     onChange={(e) => updateField("whatsapp", e.target.value)}
-                    className={`h-11 bg-background/10 text-background placeholder:text-background/50 ${
+                    className={`h-11 w-full bg-background/10 text-background placeholder:text-background/50 ${
                       errors.whatsapp
                         ? "border-destructive"
                         : "border-background/20"
@@ -274,7 +276,7 @@ const B2BHero = () => {
                     type="email"
                     value={formData.email}
                     onChange={(e) => updateField("email", e.target.value)}
-                    className={`h-11 bg-background/10 text-background placeholder:text-background/50 ${
+                    className={`h-11 w-full bg-background/10 text-background placeholder:text-background/50 ${
                       errors.email
                         ? "border-destructive"
                         : "border-background/20"
@@ -282,40 +284,42 @@ const B2BHero = () => {
                   />
                 </div>
 
-                <Select
-                  value={formData.vendeDeportivas}
-                  onValueChange={(v) => updateField("vendeDeportivas", v)}
-                >
-                  <SelectTrigger
-                    className={`h-11 bg-background/10 text-background ${
-                      errors.vendeDeportivas
-                        ? "border-destructive"
-                        : "border-background/20"
-                    }`}
+                <div className="w-full">
+                  <Select
+                    value={formData.vendeDeportivas}
+                    onValueChange={(v) => updateField("vendeDeportivas", v)}
                   >
-                    <SelectValue placeholder="¿Vendes marcas deportivas? *" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="si">Sí</SelectItem>
-                    <SelectItem value="no">No</SelectItem>
-                  </SelectContent>
-                </Select>
+                    <SelectTrigger
+                      className={`h-11 w-full bg-background/10 text-background ${
+                        errors.vendeDeportivas
+                          ? "border-destructive"
+                          : "border-background/20"
+                      }`}
+                    >
+                      <SelectValue placeholder="¿Vendes marcas deportivas? *" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="si">Sí</SelectItem>
+                      <SelectItem value="no">No</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
 
-                <div className="flex items-start gap-3 pt-1">
+                <div className="flex items-start gap-3 pt-1 w-full">
                   <Checkbox
                     id="autoriza-hero"
                     checked={formData.autorizaDatos}
                     onCheckedChange={(checked) =>
                       updateField("autorizaDatos", !!checked)
                     }
-                    className={`mt-0.5 border-background/40 data-[state=checked]:bg-accent ${
+                    className={`mt-0.5 shrink-0 border-background/40 data-[state=checked]:bg-accent ${
                       errors.autorizaDatos ? "border-destructive" : ""
                     }`}
                   />
 
                   <Label
                     htmlFor="autoriza-hero"
-                    className="text-xs leading-relaxed text-background/60 cursor-pointer sm:text-sm"
+                    className="text-xs leading-tight text-background/60 cursor-pointer sm:text-sm"
                   >
                     Autorizo el tratamiento de mis datos personales según la
                     política de privacidad de KOM Sportswear. *
@@ -326,26 +330,26 @@ const B2BHero = () => {
                   variant="kom"
                   size="lg"
                   type="submit"
-                  className="w-full py-5 text-sm sm:py-6 sm:text-base"
+                  className="w-full py-5 text-xs font-bold tracking-tight sm:py-6 sm:text-sm md:text-base whitespace-normal h-auto text-center"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (
-                    <>
+                    <span className="flex items-center justify-center">
                       <Loader2 className="mr-2 h-5 w-5 animate-spin" />
                       Enviando...
-                    </>
+                    </span>
                   ) : (
-                    <>
+                    <span className="flex items-center justify-center">
                       Solicitar Catálogo para Distribuidores
-                      <ArrowRight className="ml-2 h-5 w-5" />
-                    </>
+                      <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 shrink-0" />
+                    </span>
                   )}
                 </Button>
               </form>
             )}
           </div>
 
-          <div className="order-1 lg:order-2 space-y-6 sm:space-y-8">
+          <div className="order-1 lg:order-2 space-y-6 sm:space-y-8 px-2 md:px-0">
             <span className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-accent sm:text-sm">
               Programa de distribuidores
             </span>
@@ -364,7 +368,7 @@ const B2BHero = () => {
             </p>
 
             <div className="flex items-center gap-2">
-              <span className="relative flex h-2.5 w-2.5">
+              <span className="relative flex h-2.5 w-2.5 shrink-0">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75"></span>
                 <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-accent"></span>
               </span>
