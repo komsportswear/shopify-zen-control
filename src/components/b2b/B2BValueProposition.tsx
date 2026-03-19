@@ -21,7 +21,7 @@ const distributorBenefits = [
 
 const metrics = [
   { value: "$500.000", label: "Pedido mínimo" },
-  { value: "Hasta 40%", label: "DE MARGEN DE GANANCIA" },
+  { value: "Hasta 60%", label: "DE MARGEN DE GANANCIA" },
   { value: "1 DÍA", label: "PARA ACTIVACIÓN" },
   { value: "COL / Latam", label: "Cobertura" },
 ];
