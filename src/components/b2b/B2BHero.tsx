@@ -142,31 +142,28 @@ const B2BHero = () => {
   };
 
   return (
-    <section
-      id="formulario"
-      className="relative min-h-screen flex items-center overflow-hidden"
-    >
+    <section id="formulario" className="relative overflow-hidden">
       <div className="absolute inset-0">
         <img
           src={heroImg}
           alt="Ciclistas KOM en ruta"
-          className="w-full h-full object-cover"
+          className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-foreground/95 via-foreground/80 to-foreground/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-foreground/95 via-foreground/80 to-foreground/55" />
       </div>
 
-      <div className="relative z-10 container mx-auto px-6 py-32 lg:py-24">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div className="relative z-10 container mx-auto px-4 py-20 sm:px-6 sm:py-24 lg:px-6 lg:py-24">
+        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-20 xl:gap-24">
           <div className="order-2 lg:order-1">
             {isSubmitted ? (
-              <div className="bg-background/10 backdrop-blur-xl border border-background/20 rounded-3xl p-8 md:p-10 text-center space-y-6">
-                <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mx-auto">
-                  <CheckCircle2 className="h-8 w-8 text-accent" />
+              <div className="rounded-2xl border border-background/20 bg-background/10 p-6 text-center backdrop-blur-xl sm:rounded-3xl sm:p-8 md:p-10">
+                <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-accent/20 sm:h-16 sm:w-16">
+                  <CheckCircle2 className="h-7 w-7 text-accent sm:h-8 sm:w-8" />
                 </div>
-                <h3 className="text-2xl font-bold text-background">
+                <h3 className="text-xl font-bold text-background sm:text-2xl">
                   ¡Solicitud recibida!
                 </h3>
-                <p className="text-background/70">
+                <p className="mt-3 text-sm leading-relaxed text-background/70 sm:text-base">
                   Nuestro equipo revisará tu solicitud y se pondrá en contacto
                   contigo.
                 </p>
@@ -174,48 +171,56 @@ const B2BHero = () => {
             ) : (
               <form
                 onSubmit={handleSubmit}
-                className="bg-background/10 backdrop-blur-xl border border-background/20 rounded-3xl p-6 md:p-8 space-y-4"
+                className="space-y-4 rounded-2xl border border-background/20 bg-background/10 p-4 backdrop-blur-xl sm:rounded-3xl sm:p-6 md:p-8"
               >
-                <h3 className="text-lg font-semibold text-background mb-2">
+                <h3 className="mb-2 text-lg font-semibold text-background">
                   Solicita el catálogo
                 </h3>
 
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                   <div>
                     <Input
                       placeholder="Nombre y apellido *"
                       value={formData.nombre}
                       onChange={(e) => updateField("nombre", e.target.value)}
-                      className={`bg-background/10 border-background/20 text-background placeholder:text-background/50 ${
-                        errors.nombre ? "border-destructive" : ""
+                      className={`h-11 bg-background/10 text-background placeholder:text-background/50 ${
+                        errors.nombre
+                          ? "border-destructive"
+                          : "border-background/20"
                       }`}
                     />
                   </div>
+
                   <div>
                     <Input
                       placeholder="Nombre de tienda"
                       value={formData.tienda}
                       onChange={(e) => updateField("tienda", e.target.value)}
-                      className="bg-background/10 border-background/20 text-background placeholder:text-background/50"
+                      className="h-11 border-background/20 bg-background/10 text-background placeholder:text-background/50"
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                   <Input
                     placeholder="Ciudad *"
                     value={formData.ciudad}
                     onChange={(e) => updateField("ciudad", e.target.value)}
-                    className={`bg-background/10 border-background/20 text-background placeholder:text-background/50 ${
-                      errors.ciudad ? "border-destructive" : ""
+                    className={`h-11 bg-background/10 text-background placeholder:text-background/50 ${
+                      errors.ciudad
+                        ? "border-destructive"
+                        : "border-background/20"
                     }`}
                   />
+
                   <Input
                     placeholder="País *"
                     value={formData.pais}
                     onChange={(e) => updateField("pais", e.target.value)}
-                    className={`bg-background/10 border-background/20 text-background placeholder:text-background/50 ${
-                      errors.pais ? "border-destructive" : ""
+                    className={`h-11 bg-background/10 text-background placeholder:text-background/50 ${
+                      errors.pais
+                        ? "border-destructive"
+                        : "border-background/20"
                     }`}
                   />
                 </div>
@@ -225,8 +230,10 @@ const B2BHero = () => {
                   onValueChange={(v) => updateField("tipoNegocio", v)}
                 >
                   <SelectTrigger
-                    className={`bg-background/10 border-background/20 text-background ${
-                      errors.tipoNegocio ? "border-destructive" : ""
+                    className={`h-11 bg-background/10 text-background ${
+                      errors.tipoNegocio
+                        ? "border-destructive"
+                        : "border-background/20"
                     }`}
                   >
                     <SelectValue placeholder="Tipo de negocio *" />
@@ -250,22 +257,27 @@ const B2BHero = () => {
                   </SelectContent>
                 </Select>
 
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                   <Input
                     placeholder="WhatsApp *"
                     value={formData.whatsapp}
                     onChange={(e) => updateField("whatsapp", e.target.value)}
-                    className={`bg-background/10 border-background/20 text-background placeholder:text-background/50 ${
-                      errors.whatsapp ? "border-destructive" : ""
+                    className={`h-11 bg-background/10 text-background placeholder:text-background/50 ${
+                      errors.whatsapp
+                        ? "border-destructive"
+                        : "border-background/20"
                     }`}
                   />
+
                   <Input
                     placeholder="Correo *"
                     type="email"
                     value={formData.email}
                     onChange={(e) => updateField("email", e.target.value)}
-                    className={`bg-background/10 border-background/20 text-background placeholder:text-background/50 ${
-                      errors.email ? "border-destructive" : ""
+                    className={`h-11 bg-background/10 text-background placeholder:text-background/50 ${
+                      errors.email
+                        ? "border-destructive"
+                        : "border-background/20"
                     }`}
                   />
                 </div>
@@ -275,8 +287,10 @@ const B2BHero = () => {
                   onValueChange={(v) => updateField("vendeDeportivas", v)}
                 >
                   <SelectTrigger
-                    className={`bg-background/10 border-background/20 text-background ${
-                      errors.vendeDeportivas ? "border-destructive" : ""
+                    className={`h-11 bg-background/10 text-background ${
+                      errors.vendeDeportivas
+                        ? "border-destructive"
+                        : "border-background/20"
                     }`}
                   >
                     <SelectValue placeholder="¿Vendes marcas deportivas? *" />
@@ -294,14 +308,14 @@ const B2BHero = () => {
                     onCheckedChange={(checked) =>
                       updateField("autorizaDatos", !!checked)
                     }
-                    className={`border-background/40 data-[state=checked]:bg-accent ${
+                    className={`mt-0.5 border-background/40 data-[state=checked]:bg-accent ${
                       errors.autorizaDatos ? "border-destructive" : ""
                     }`}
                   />
 
                   <Label
                     htmlFor="autoriza-hero"
-                    className="text-xs text-background/60 leading-relaxed cursor-pointer"
+                    className="text-xs leading-relaxed text-background/60 cursor-pointer sm:text-sm"
                   >
                     Autorizo el tratamiento de mis datos personales según la
                     política de privacidad de KOM Sportswear. *
@@ -312,12 +326,12 @@ const B2BHero = () => {
                   variant="kom"
                   size="lg"
                   type="submit"
-                  className="w-full text-base py-6"
+                  className="w-full py-5 text-sm sm:py-6 sm:text-base"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (
                     <>
-                      <Loader2 className="h-5 w-5 animate-spin mr-2" />
+                      <Loader2 className="mr-2 h-5 w-5 animate-spin" />
                       Enviando...
                     </>
                   ) : (
@@ -331,12 +345,12 @@ const B2BHero = () => {
             )}
           </div>
 
-          <div className="order-1 lg:order-2 space-y-8">
-            <span className="inline-block text-accent font-semibold tracking-[0.2em] uppercase text-sm">
+          <div className="order-1 lg:order-2 space-y-6 sm:space-y-8">
+            <span className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-accent sm:text-sm">
               Programa de distribuidores
             </span>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.05] text-background tracking-tight">
+            <h1 className="text-3xl font-bold leading-[1.05] tracking-tight text-background sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
               Conviértete en
               <br />
               <span className="text-accent">distribuidor</span>
@@ -344,28 +358,28 @@ const B2BHero = () => {
               de KOM
             </h1>
 
-            <p className="text-lg md:text-xl text-background/70 leading-relaxed max-w-lg">
+            <p className="max-w-xl text-base leading-relaxed text-background/70 sm:text-lg md:text-xl">
               Vende una marca deportiva para ciclismo y running con diseño
               técnico, alto posicionamiento y potencial comercial.
             </p>
 
             <div className="flex items-center gap-2">
               <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent"></span>
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75"></span>
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-accent"></span>
               </span>
-              <span className="text-sm text-accent font-medium tracking-wide">
+              <span className="text-xs font-medium tracking-wide text-accent sm:text-sm">
                 Selección activa — cupos limitados por ciudad
               </span>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 pt-4">
+            <div className="grid grid-cols-1 gap-3 pt-2 sm:grid-cols-2 sm:gap-4 sm:pt-4">
               {trustSignals.map((signal) => (
                 <div key={signal.label} className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-accent/15 flex items-center justify-center flex-shrink-0">
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-accent/15">
                     <signal.icon className="h-5 w-5 text-accent" />
                   </div>
-                  <span className="text-background/80 text-sm font-medium">
+                  <span className="text-sm font-medium text-background/80">
                     {signal.label}
                   </span>
                 </div>
