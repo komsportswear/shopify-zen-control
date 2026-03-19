@@ -54,7 +54,6 @@ const initialFormData: FormData = {
 };
 
 // Sub-componente para los beneficios/señales de confianza
-// Esto nos permite mostrarlos abajo en móvil y a la derecha en desktop sin repetir código.
 const TrustSignalsBlock = ({ className }: { className?: string }) => (
   <div className={className}>
     <div className="flex items-center gap-2">
@@ -184,7 +183,7 @@ const B2BHero = () => {
       <div className="relative z-10 w-full mx-auto px-4 py-16 sm:max-w-[640px] md:max-w-none md:px-6 lg:py-24">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-20 xl:gap-24">
           
-          {/* TEXTO PRINCIPAL - Arriba en móvil (order-1), a la Derecha en escritorio (lg:order-2) */}
+          {/* TEXTO PRINCIPAL */}
           <div className="order-1 lg:order-2 space-y-6 sm:space-y-8 px-1 md:px-0">
             <span className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-accent sm:text-sm">
               Programa de distribuidores
@@ -203,11 +202,10 @@ const B2BHero = () => {
               técnico, alto posicionamiento y potencial comercial.
             </p>
 
-            {/* TRUST SIGNALS - Visibles aquí SOLO en Desktop (ocultos en móvil) */}
             <TrustSignalsBlock className="hidden lg:block space-y-4 pt-2 sm:pt-4" />
           </div>
 
-          {/* FORMULARIO - Debajo del título en móvil (order-2), a la Izquierda en escritorio (lg:order-1) */}
+          {/* FORMULARIO */}
           <div className="order-2 lg:order-1 w-full max-w-md mx-auto lg:max-w-none">
             {isSubmitted ? (
               <div className="rounded-2xl border border-background/20 bg-background/10 p-6 text-center backdrop-blur-xl sm:rounded-3xl sm:p-8 md:p-10 w-full">
@@ -294,20 +292,12 @@ const B2BHero = () => {
                       <SelectValue placeholder="Tipo de negocio *" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="tienda-deportiva">
-                        Tienda deportiva
-                      </SelectItem>
-                      <SelectItem value="tienda-ciclismo">
-                        Tienda de ciclismo
-                      </SelectItem>
-                      <SelectItem value="concept-store">Concept store</SelectItem>
-                      <SelectItem value="distribuidor">
-                        Distribuidor regional
-                      </SelectItem>
-                      <SelectItem value="ecommerce">E-commerce</SelectItem>
-                      <SelectItem value="emprendedor">
-                        Emprendedor independiente
-                      </SelectItem>
+                      {/* --- NUEVAS OPCIONES DE TIPO DE NEGOCIO --- */}
+                      <SelectItem value="tiendas-deportivas">Tiendas deportivas</SelectItem>
+                      <SelectItem value="tiendas-ciclismo">Tiendas de ciclismo</SelectItem>
+                      <SelectItem value="emprendedores">Emprendedores</SelectItem>
+                      <SelectItem value="eventos">Eventos</SelectItem>
+                      <SelectItem value="distribuidores-regionales">Distribuidores regionales</SelectItem>
                       <SelectItem value="otro">Otro</SelectItem>
                     </SelectContent>
                   </Select>
@@ -402,7 +392,6 @@ const B2BHero = () => {
               </form>
             )}
 
-            {/* TRUST SIGNALS - Visibles aquí SOLO en Móvil (debajo del formulario) */}
             <TrustSignalsBlock className="mt-8 block lg:hidden space-y-4" />
 
           </div>
