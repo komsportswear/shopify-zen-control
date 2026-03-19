@@ -152,9 +152,54 @@ const B2BHero = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/95 via-foreground/80 to-foreground/55" />
       </div>
 
-      <div className="relative z-10 w-full mx-auto px-3 py-20 sm:max-w-[640px] md:max-w-none md:px-6 lg:py-24">
+      <div className="relative z-10 w-full mx-auto px-4 py-16 sm:max-w-[640px] md:max-w-none md:px-6 lg:py-24">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-20 xl:gap-24">
-          <div className="order-2 lg:order-1 w-full max-w-md mx-auto lg:max-w-none">
+          
+          {/* TEXTO - En móviles pasa a ser order-2 (abajo), en escritorio es order-1 (izquierda) */}
+          <div className="order-2 lg:order-1 space-y-6 sm:space-y-8 px-1 md:px-0">
+            <span className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-accent sm:text-sm">
+              Programa de distribuidores
+            </span>
+
+            <h1 className="text-3xl font-bold leading-[1.05] tracking-tight text-background sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+              Conviértete en
+              <br />
+              <span className="text-accent">distribuidor</span>
+              <br />
+              de KOM
+            </h1>
+
+            <p className="max-w-xl text-base leading-relaxed text-background/70 sm:text-lg md:text-xl">
+              Vende una marca deportiva para ciclismo y running con diseño
+              técnico, alto posicionamiento y potencial comercial.
+            </p>
+
+            <div className="flex items-center gap-2">
+              <span className="relative flex h-2.5 w-2.5 shrink-0">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75"></span>
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-accent"></span>
+              </span>
+              <span className="text-xs font-medium tracking-wide text-accent sm:text-sm">
+                Selección activa — cupos limitados por ciudad
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 gap-3 pt-2 sm:grid-cols-2 sm:gap-4 sm:pt-4">
+              {trustSignals.map((signal) => (
+                <div key={signal.label} className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-accent/15">
+                    <signal.icon className="h-5 w-5 text-accent" />
+                  </div>
+                  <span className="text-sm font-medium text-background/80">
+                    {signal.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* FORMULARIO - En móviles pasa a ser order-1 (arriba), en escritorio es order-2 (derecha) */}
+          <div className="order-1 lg:order-2 w-full max-w-md mx-auto lg:max-w-none">
             {isSubmitted ? (
               <div className="rounded-2xl border border-background/20 bg-background/10 p-6 text-center backdrop-blur-xl sm:rounded-3xl sm:p-8 md:p-10 w-full">
                 <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-accent/20 sm:h-16 sm:w-16">
@@ -171,7 +216,7 @@ const B2BHero = () => {
             ) : (
               <form
                 onSubmit={handleSubmit}
-                className="space-y-4 rounded-xl border border-background/20 bg-background/10 p-5 backdrop-blur-xl sm:rounded-3xl sm:p-6 md:p-8 w-full"
+                className="space-y-4 rounded-xl border border-background/20 bg-background/10 p-5 backdrop-blur-xl sm:rounded-3xl sm:p-6 md:p-8 w-full box-border"
               >
                 <h3 className="mb-2 text-lg font-semibold text-background">
                   Solicita el catálogo
@@ -330,7 +375,7 @@ const B2BHero = () => {
                   variant="kom"
                   size="lg"
                   type="submit"
-                  className="w-full py-5 text-xs font-bold tracking-tight sm:py-6 sm:text-sm md:text-base whitespace-normal h-auto text-center"
+                  className="w-full py-4 h-auto min-h-[3.5rem] text-sm font-bold sm:text-base whitespace-normal text-center"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (
@@ -339,9 +384,9 @@ const B2BHero = () => {
                       Enviando...
                     </span>
                   ) : (
-                    <span className="flex items-center justify-center">
-                      Solicitar Catálogo para Distribuidores
-                      <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 shrink-0" />
+                    <span className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
+                      <span>Solicitar Catálogo para Distribuidores</span>
+                      <ArrowRight className="h-4 w-4 md:h-5 md:w-5 shrink-0" />
                     </span>
                   )}
                 </Button>
@@ -349,47 +394,6 @@ const B2BHero = () => {
             )}
           </div>
 
-          <div className="order-1 lg:order-2 space-y-6 sm:space-y-8 px-2 md:px-0">
-            <span className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-accent sm:text-sm">
-              Programa de distribuidores
-            </span>
-
-            <h1 className="text-3xl font-bold leading-[1.05] tracking-tight text-background sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-              Conviértete en
-              <br />
-              <span className="text-accent">distribuidor</span>
-              <br />
-              de KOM
-            </h1>
-
-            <p className="max-w-xl text-base leading-relaxed text-background/70 sm:text-lg md:text-xl">
-              Vende una marca deportiva para ciclismo y running con diseño
-              técnico, alto posicionamiento y potencial comercial.
-            </p>
-
-            <div className="flex items-center gap-2">
-              <span className="relative flex h-2.5 w-2.5 shrink-0">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75"></span>
-                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-accent"></span>
-              </span>
-              <span className="text-xs font-medium tracking-wide text-accent sm:text-sm">
-                Selección activa — cupos limitados por ciudad
-              </span>
-            </div>
-
-            <div className="grid grid-cols-1 gap-3 pt-2 sm:grid-cols-2 sm:gap-4 sm:pt-4">
-              {trustSignals.map((signal) => (
-                <div key={signal.label} className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-accent/15">
-                    <signal.icon className="h-5 w-5 text-accent" />
-                  </div>
-                  <span className="text-sm font-medium text-background/80">
-                    {signal.label}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>
