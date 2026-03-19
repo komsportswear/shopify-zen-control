@@ -71,7 +71,7 @@ const B2BHero = () => {
     }
     setIsSubmitting(true);
     try {
-      const WEBHOOK_URL = "https://script.google.com/macros/s/PLACEHOLDER/exec";
+      const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbwZMgAB3SzuXuJF3bZEpsQoNTuaYWiyQndQslI03uKbmn8rsk6AmI0yVa92shNsihbyOw/exec";
       await fetch(WEBHOOK_URL, {
         method: "POST",
         mode: "no-cors",
