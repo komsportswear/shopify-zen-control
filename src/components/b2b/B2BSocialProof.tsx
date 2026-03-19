@@ -4,7 +4,7 @@ import runningImg from "@/assets/b2b-running.jpg";
 const proofPoints = [
   { icon: Package, value: "+200", label: "Referencias activas" },
   { icon: MapPin, value: "+10", label: "Años de recorrido" },
-  { icon: Users, value: "+15.000", label: "Clientes impactados" },
+  { icon: Users, value: "+100.000", label: "Clientes impactados" },
   { icon: LayoutGrid, value: "+15", label: "Países" },
 ];
 
