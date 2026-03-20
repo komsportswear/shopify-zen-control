@@ -51,10 +51,10 @@ const B2BFooter = () => {
           <div className="space-y-4">
             <h4 className="text-sm font-semibold uppercase tracking-wider text-background/50">Síguenos</h4>
             <div className="flex gap-3">
-              <a href="https://instagram.com/komsportswear" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-background/20 flex items-center justify-center hover:border-accent hover:text-accent transition-colors">
+              <a href="https://www.instagram.com/komsports.oficial" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-background/20 flex items-center justify-center hover:border-accent hover:text-accent transition-colors">
                 <Instagram className="h-4 w-4" />
               </a>
-              <a href="https://902135-9f.myshopify.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-background/20 flex items-center justify-center hover:border-accent hover:text-accent transition-colors">
+              <a href="https://komsportswear.com/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-background/20 flex items-center justify-center hover:border-accent hover:text-accent transition-colors">
                 <ExternalLink className="h-4 w-4" />
               </a>
             </div>
