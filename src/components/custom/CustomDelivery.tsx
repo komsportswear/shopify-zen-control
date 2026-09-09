@@ -2,7 +2,7 @@ import { Clock } from "lucide-react";
 import { deliveryTimes, serviceIncludes } from "./data";
 
 const CustomDelivery = () => (
-  <section id="tiempos" className="scroll-mt-20 bg-kom-surface py-20 lg:py-28">
+  <section id="tiempos" className="scroll-mt-20 bg-background py-20 lg:py-28">
     <div className="container mx-auto px-6">
       <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
         <div>
