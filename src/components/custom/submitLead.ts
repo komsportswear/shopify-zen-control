@@ -13,11 +13,12 @@ export interface LeadPayload {
   phone: string;
   email: string;
   city: string;
+  reference_link?: string;
 }
 
-export const submitLead = async (lead: LeadPayload) => {
+const send = async (fields: Record<string, string>) => {
   const payload = new URLSearchParams({
-    ...lead,
+    ...fields,
     ...getUtmParams(),
     created_at: new Date().toISOString(),
   });
@@ -27,5 +28,18 @@ export const submitLead = async (lead: LeadPayload) => {
     mode: "no-cors",
     headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
     body: payload.toString(),
+  });
+};
+
+export const submitLead = async (lead: LeadPayload) => send({ ...lead });
+
+/** Envío de lead incompleto: el usuario dejó contacto pero no terminó el formulario. */
+export const submitPartialLead = async (lead: Partial<LeadPayload> & { step: number }) => {
+  const { step, ...rest } = lead;
+  await send({
+    ...(rest as Record<string, string>),
+    source: `${rest.source ?? "landing-personalizados"}-parcial`,
+    status: "incompleto",
+    last_step: String(step),
   });
 };

@@ -1,26 +1,32 @@
 import { useEffect, useState } from "react";
-import { ArrowRight, Menu } from "lucide-react";
+import { ArrowRight, Menu, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import komLogo from "@/assets/kom-logo.png";
 import CustomHero from "@/components/custom/CustomHero";
+import CustomTrust from "@/components/custom/CustomTrust";
 import CustomProjectTypes from "@/components/custom/CustomProjectTypes";
 import CustomDesignHelp from "@/components/custom/CustomDesignHelp";
 import CustomProducts from "@/components/custom/CustomProducts";
 import CustomQuoteForm from "@/components/custom/CustomQuoteForm";
 import CustomPricing from "@/components/custom/CustomPricing";
+import CustomDelivery from "@/components/custom/CustomDelivery";
 import CustomQuality from "@/components/custom/CustomQuality";
 import CustomProcess from "@/components/custom/CustomProcess";
 import CustomCases from "@/components/custom/CustomCases";
+import CustomFAQ from "@/components/custom/CustomFAQ";
 import CustomFinalForm from "@/components/custom/CustomFinalForm";
 import CustomFooter from "@/components/custom/CustomFooter";
+import { WHATSAPP_URL } from "@/components/custom/data";
+import { trackEvent } from "@/lib/analytics";
 
 const navLinks = [
   { href: "#proyectos-tipo", label: "Proyectos" },
   { href: "#productos", label: "Productos" },
+  { href: "#tiempos", label: "Tiempos" },
   { href: "#calidad", label: "Calidad" },
   { href: "#proceso", label: "Proceso" },
-  { href: "#casos", label: "Casos" },
+  { href: "#faq", label: "FAQ" },
 ];
 
 const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -77,6 +83,7 @@ const Header = () => {
 
 const CustomPage = () => {
   const [projectType, setProjectType] = useState("");
+  const [inProgress, setInProgress] = useState(false);
 
   useEffect(() => {
     document.title = "Ropa deportiva personalizada | KOM Sportswear";
@@ -89,6 +96,12 @@ const CustomPage = () => {
       document.head.appendChild(meta);
     }
     meta.setAttribute("content", desc);
+
+    try {
+      setInProgress(!!localStorage.getItem("kom-cotizacion-personalizados"));
+    } catch {
+      /* almacenamiento no disponible */
+    }
   }, []);
 
   const goToForm = (type?: string) => {
@@ -101,22 +114,38 @@ const CustomPage = () => {
       <Header />
       <main>
         <CustomHero onQuote={() => goToForm()} onProjects={() => scrollTo("casos")} />
+        <CustomTrust />
         <CustomProjectTypes onSelect={(v) => goToForm(v)} />
         <CustomDesignHelp />
         <CustomProducts onQuote={() => goToForm()} />
         <CustomQuoteForm projectType={projectType} setProjectType={setProjectType} />
         <CustomPricing />
+        <CustomDelivery />
         <CustomQuality />
         <CustomProcess />
         <CustomCases onQuote={() => goToForm()} />
-        <CustomFinalForm projectType={projectType} />
+        <CustomFAQ />
+        <CustomFinalForm onQuote={() => goToForm()} />
       </main>
       <CustomFooter />
+
+      {/* WhatsApp flotante (escritorio) */}
+      <button
+        type="button"
+        aria-label="Escríbenos por WhatsApp"
+        onClick={() => {
+          trackEvent("click_whatsapp");
+          window.open(WHATSAPP_URL, "_blank");
+        }}
+        className="fixed bottom-8 right-8 z-40 hidden h-14 w-14 items-center justify-center bg-accent text-accent-foreground shadow-lg transition-transform hover:scale-105 md:flex"
+      >
+        <MessageCircle className="h-6 w-6" />
+      </button>
 
       {/* CTA sticky mobile */}
       <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-border bg-background p-3 md:hidden">
         <Button variant="kom" className="w-full py-5 text-sm font-bold" onClick={() => goToForm()}>
-          COTIZAR MI PROYECTO
+          {inProgress ? "CONTINUAR MI COTIZACIÓN" : "COTIZAR MI PROYECTO"}
         </Button>
       </div>
       <div className="h-16 md:hidden" />
