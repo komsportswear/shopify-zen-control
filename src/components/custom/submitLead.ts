@@ -13,6 +13,7 @@ export interface LeadPayload {
   phone: string;
   email: string;
   city: string;
+  reference_link?: string;
 }
 
 const send = async (fields: Record<string, string>) => {
