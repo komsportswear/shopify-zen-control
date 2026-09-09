@@ -4,7 +4,9 @@ type EventName =
   | "start_quote"
   | "complete_quote"
   | "click_whatsapp"
-  | "view_projects";
+  | "view_projects"
+  | "wizard_step_view"
+  | "abandon_step";
 
 declare global {
   interface Window {
