@@ -1,6 +1,7 @@
 import { ArrowRight, PenTool, Factory, Truck, Handshake } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/b2b-hero.jpg";
+import heroVideo from "@/assets/banner-personalizados.mp4.asset.json";
 import { trackEvent } from "@/lib/analytics";
 
 const micro = [
@@ -18,7 +19,19 @@ interface Props {
 const CustomHero = ({ onQuote, onProjects }: Props) => (
   <section className="relative flex min-h-[88vh] items-center overflow-hidden pt-16">
     <div className="absolute inset-0">
-      <img src={heroImg} alt="Equipo con uniformes personalizados KOM" className="h-full w-full object-cover" />
+      <video
+        className="h-full w-full object-cover object-center"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        poster={heroImg}
+        aria-hidden="true"
+        tabIndex={-1}
+      >
+        <source src={heroVideo.url} type="video/mp4" />
+      </video>
       <div className="absolute inset-0 bg-gradient-to-r from-foreground/95 via-foreground/80 to-foreground/40" />
     </div>
 
