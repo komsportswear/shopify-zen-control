@@ -17,7 +17,8 @@ const CustomPricing = () => (
       </div>
 
       <p className="mt-6 max-w-2xl text-sm text-muted-foreground">
-        Valores desde. El precio final depende del producto, materiales, cantidades y características del proyecto.
+        El precio final depende del producto, materiales, cantidades y características del proyecto. Recibes el valor
+        exacto en tu propuesta.
       </p>
     </div>
   </section>
