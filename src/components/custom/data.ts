@@ -1,11 +1,14 @@
 import catRopaCiclismo from "@/assets/cat-ropa-ciclismo.jpg";
-import catAccesoriosCiclismo from "@/assets/cat-accesorios-ciclismo.jpg";
 import catRopaRunning from "@/assets/cat-ropa-running.jpg";
-import catAccesoriosRunning from "@/assets/cat-accesorios-running.jpg";
-import catMedias from "@/assets/cat-medias.jpg";
 import catPersonalizados from "@/assets/cat-personalizados.jpg";
-import catBibshorts from "@/assets/cat-bibshorts.jpg";
-import catJacket from "@/assets/cat-jacket.jpg";
+import prodJersey from "@/assets/prod-jersey.webp.asset.json";
+import prodBibshorts from "@/assets/prod-bibshorts.webp.asset.json";
+import prodRunning from "@/assets/prod-running.webp.asset.json";
+import prodUniformes from "@/assets/prod-uniformes.webp.asset.json";
+import prodChalecos from "@/assets/prod-chalecos.webp.asset.json";
+import prodMedias from "@/assets/prod-medias.webp.asset.json";
+import prodGorras from "@/assets/prod-gorras.webp.asset.json";
+import prodCorporativos from "@/assets/prod-corporativos.webp.asset.json";
 
 export const WEBHOOK_URL =
   "https://script.google.com/macros/s/AKfycbwZMgAB3SzuXuJF3bZEpsQoNTuaYWiyQndQslI03uKbmn8rsk6AmI0yVa92shNsihbyOw/exec";
@@ -41,14 +44,14 @@ export const projectTypes = [
 ];
 
 export const products = [
-  { name: "Jersey personalizado", min: "Desde 10 unidades", image: catRopaCiclismo },
-  { name: "Bib shorts / pantalonetas", min: "Desde 10 unidades", image: catBibshorts },
-  { name: "Camiseta de running", min: "Desde 10 unidades", image: catRopaRunning },
-  { name: "Uniformes deportivos", min: "Desde 10 unidades", image: catPersonalizados },
-  { name: "Chalecos y cortavientos", min: "Desde 10 unidades", image: catJacket },
-  { name: "Medias personalizadas", min: "Cantidad mínima según producto", image: catMedias },
-  { name: "Gorras y viseras", min: "Cantidad mínima según producto", image: catAccesoriosRunning },
-  { name: "Kits corporativos", min: "Cantidad mínima según producto", image: catAccesoriosCiclismo },
+  { name: "Jersey personalizado", min: "Desde 10 unidades", image: prodJersey.url },
+  { name: "Bib shorts / pantalonetas", min: "Desde 10 unidades", image: prodBibshorts.url },
+  { name: "Camiseta de running", min: "Desde 10 unidades", image: prodRunning.url },
+  { name: "Uniformes deportivos", min: "Desde 10 unidades", image: prodUniformes.url },
+  { name: "Chalecos y cortavientos", min: "Desde 10 unidades", image: prodChalecos.url },
+  { name: "Medias personalizadas", min: "Cantidad mínima según producto", image: prodMedias.url },
+  { name: "Gorras y viseras", min: "Cantidad mínima según producto", image: prodGorras.url },
+  { name: "Kits corporativos", min: "Cantidad mínima según producto", image: prodCorporativos.url },
 ];
 
 /** Beneficio por volumen. Reemplazar por porcentajes reales cuando estén definidos. */
