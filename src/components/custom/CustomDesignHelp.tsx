@@ -36,7 +36,7 @@ const CustomDesignHelp = () => (
       </div>
 
       <div className="relative aspect-[4/5] overflow-hidden lg:aspect-[3/4]">
-        <img src={img} alt="Proceso de diseño de prendas personalizadas KOM" loading="lazy" className="h-full w-full object-cover" />
+        <img src={designHelpAsset.url} alt="Proceso de diseño de prendas personalizadas KOM" loading="lazy" className="h-full w-full object-cover" />
       </div>
     </div>
   </section>
