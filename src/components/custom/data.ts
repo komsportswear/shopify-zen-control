@@ -120,7 +120,7 @@ export const productOptions = [
   "Otro",
 ];
 
-export const quantityRanges = ["10–24", "25–49", "50–99", "100–249", "250–499", "500+"];
+export const quantityRanges = ["1 Unidad", "10–49", "50–199", "200–999", "1000–5000", "+1000"];
 
 export const designOptions = [
   "Sí, ya está listo",
