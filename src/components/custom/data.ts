@@ -111,12 +111,12 @@ export const faqs = [
 ];
 
 export const productOptions = [
-  "Jersey",
-  "Bib",
-  "Camiseta",
-  "Uniforme",
   "Medias",
-  "Kit",
+  "Camiseta",
+  "Jersey o enterizo",
+  "Visera",
+  "Botilito / Softflask",
+  "Accesorios",
   "Otro",
 ];
 
