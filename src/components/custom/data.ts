@@ -44,14 +44,14 @@ export const projectTypes = [
 ];
 
 export const products = [
-  { name: "Jersey personalizado", min: "Desde 10 unidades", image: catRopaCiclismo },
-  { name: "Bib shorts / pantalonetas", min: "Desde 10 unidades", image: catBibshorts },
-  { name: "Camiseta de running", min: "Desde 10 unidades", image: catRopaRunning },
-  { name: "Uniformes deportivos", min: "Desde 10 unidades", image: catPersonalizados },
-  { name: "Chalecos y cortavientos", min: "Desde 10 unidades", image: catJacket },
-  { name: "Medias personalizadas", min: "Cantidad mínima según producto", image: catMedias },
-  { name: "Gorras y viseras", min: "Cantidad mínima según producto", image: catAccesoriosRunning },
-  { name: "Kits corporativos", min: "Cantidad mínima según producto", image: catAccesoriosCiclismo },
+  { name: "Jersey personalizado", min: "Desde 10 unidades", image: prodJersey.url },
+  { name: "Bib shorts / pantalonetas", min: "Desde 10 unidades", image: prodBibshorts.url },
+  { name: "Camiseta de running", min: "Desde 10 unidades", image: prodRunning.url },
+  { name: "Uniformes deportivos", min: "Desde 10 unidades", image: prodUniformes.url },
+  { name: "Chalecos y cortavientos", min: "Desde 10 unidades", image: prodChalecos.url },
+  { name: "Medias personalizadas", min: "Cantidad mínima según producto", image: prodMedias.url },
+  { name: "Gorras y viseras", min: "Cantidad mínima según producto", image: prodGorras.url },
+  { name: "Kits corporativos", min: "Cantidad mínima según producto", image: prodCorporativos.url },
 ];
 
 /** Beneficio por volumen. Reemplazar por porcentajes reales cuando estén definidos. */
