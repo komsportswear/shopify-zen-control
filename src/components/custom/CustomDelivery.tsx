@@ -18,7 +18,7 @@ const CustomDelivery = () => (
           <div className="mt-8 grid gap-px border border-border bg-border">
             {deliveryTimes.map((d) => (
               <div key={d.range} className="flex items-center justify-between bg-background px-5 py-4">
-                <span className="text-sm font-semibold">{d.range} unidades</span>
+                <span className="text-sm font-semibold">{d.range}</span>
                 <span className="inline-flex items-center gap-2 text-sm text-muted-foreground">
                   <Clock className="h-4 w-4 text-accent" />
                   {d.time}
