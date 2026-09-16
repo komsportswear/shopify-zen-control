@@ -165,6 +165,7 @@ const CustomQuoteForm = ({ projectType, setProjectType }: Props) => {
     if (!phoneOk(data.phone)) e.phone = "Escribe un WhatsApp válido, ej: +57 300 000 0000";
     if (!emailOk(data.email)) e.email = "Escribe un correo válido";
     if (!data.city.trim()) e.city = "Indícanos tu ciudad";
+    if (!data.desired_date.trim()) e.desired_date = "Indícanos para cuándo lo necesitas";
     setErrors(e);
     return Object.keys(e).length === 0;
   };
@@ -365,7 +366,7 @@ const CustomQuoteForm = ({ projectType, setProjectType }: Props) => {
                     {field("phone", "WhatsApp", { required: true, placeholder: "+57 300 000 0000" })}
                     {field("email", "Correo", { required: true, type: "email" })}
                     {field("city", "Ciudad", { required: true })}
-                    {field("desired_date", "¿Para cuándo lo necesitas?")}
+                    {field("desired_date", "¿Para cuándo lo necesitas?", { required: true })}
                   </div>
                   <Button variant="kom" size="lg" type="submit" disabled={sending} className="w-full py-6 text-base">
                     {sending ? <Loader2 className="mr-2 h-5 w-5 animate-spin" /> : null}
