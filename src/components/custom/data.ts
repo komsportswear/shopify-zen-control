@@ -56,10 +56,10 @@ export const products = [
 
 /** Beneficio por volumen. Reemplazar por porcentajes reales cuando estén definidos. */
 export const priceTiers = [
-  { range: "10–24 unidades", price: "Precio base del proyecto" },
-  { range: "25–49 unidades", price: "Mejor precio por unidad" },
-  { range: "50–99 unidades", price: "Descuento por volumen" },
-  { range: "100+ unidades", price: "Cotización especial" },
+  { range: "10–49 UNIDADES", price: "Precio base del proyecto" },
+  { range: "50–199 UNIDADES", price: "Mejor precio por unidad" },
+  { range: "200–999 UNIDADES", price: "Descuento por volumen" },
+  { range: "1000+ UNIDADES", price: "Cotización especial" },
 ];
 
 /** Proyectos: solo imagen hasta tener casos reales autorizados. */
@@ -70,10 +70,10 @@ export const cases = [
 ];
 
 export const deliveryTimes = [
-  { range: "10–24", time: "10 a 15 días hábiles" },
-  { range: "25–99", time: "15 a 20 días hábiles" },
-  { range: "100–499", time: "20 a 30 días hábiles" },
-  { range: "500+", time: "Según cronograma acordado" },
+  { range: "10–49 unidades", time: "10 a 15 días hábiles" },
+  { range: "50–199 unidades", time: "15 a 20 días hábiles" },
+  { range: "200–999 unidades", time: "20 a 30 días hábiles" },
+  { range: "1000+ unidades", time: "Según cronograma acordado" },
 ];
 
 export const serviceIncludes = [
