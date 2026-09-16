@@ -1,5 +1,5 @@
 import { Lightbulb, PenLine, Shirt } from "lucide-react";
-import img from "@/assets/b2b-store.jpg";
+import designHelpAsset from "@/assets/design-help.webp.asset.json";
 
 const cards = [
   { icon: Shirt, title: "Ya tengo diseño", text: "Lo adaptamos técnicamente para producción." },
