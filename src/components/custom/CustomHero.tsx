@@ -1,7 +1,7 @@
 import { ArrowRight, PenTool, Factory, Truck, Handshake } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/b2b-hero.jpg";
-import heroVideo from "@/assets/banner-personalizados.mp4.asset.json";
+import heroVideo from "@/assets/banner-personalizados.mp4";
 import { trackEvent } from "@/lib/analytics";
 
 const micro = [
@@ -30,7 +30,7 @@ const CustomHero = ({ onQuote, onProjects }: Props) => (
         aria-hidden="true"
         tabIndex={-1}
       >
-        <source src={heroVideo.url} type="video/mp4" />
+        <source src={heroVideo} type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-gradient-to-r from-foreground/95 via-foreground/85 to-foreground/45" />
     </div>
