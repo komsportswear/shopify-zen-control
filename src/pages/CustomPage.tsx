@@ -33,12 +33,28 @@ const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ b
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 border-b border-background/10 bg-foreground/95 backdrop-blur-md">
-      <div className="container mx-auto flex h-16 items-center justify-between px-6">
+    <header
+      className={`fixed left-0 right-0 top-0 z-50 border-b transition-colors duration-300 ${
+        scrolled ? "border-background/10 bg-foreground/95 backdrop-blur-md" : "border-transparent bg-foreground/40 backdrop-blur-sm"
+      }`}
+    >
+      <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6">
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild className="md:hidden">
-            <button aria-label="Abrir menú" className="text-background/80 transition-colors hover:text-accent">
+            <button
+              aria-label="Abrir menú"
+              className="-ml-2 flex h-11 w-11 items-center justify-center text-background/80 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            >
               <Menu className="h-6 w-6" />
             </button>
           </SheetTrigger>
@@ -52,7 +68,7 @@ const Header = () => {
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="rounded-lg px-3 py-3 text-base font-medium text-background/70 transition-colors hover:bg-background/5 hover:text-accent"
+                  className="flex min-h-[44px] items-center px-3 text-base font-medium text-background/80 transition-colors hover:bg-background/5 hover:text-accent"
                 >
                   {l.label}
                 </a>
@@ -63,18 +79,22 @@ const Header = () => {
 
         <nav className="hidden items-center gap-6 md:flex">
           {navLinks.map((l) => (
-            <a key={l.href} href={l.href} className="text-sm text-background/70 transition-colors hover:text-accent">
+            <a
+              key={l.href}
+              href={l.href}
+              className="text-sm text-background/80 transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            >
               {l.label}
             </a>
           ))}
         </nav>
 
-        <a href="/" className="absolute left-1/2 -translate-x-1/2">
-          <img src={komLogo} alt="KOM Sportswear" className="h-16" />
+        <a href="/" className="absolute left-1/2 -translate-x-1/2" aria-label="KOM Sportswear">
+          <img src={komLogo} alt="KOM Sportswear" className="h-12 md:h-14" />
         </a>
 
-        <Button variant="kom" size="sm" onClick={() => scrollTo("cotizar")}>
-          Cotizar <ArrowRight className="ml-1 h-4 w-4" />
+        <Button variant="kom" size="sm" className="shrink-0" onClick={() => scrollTo("cotizar")}>
+          Cotizar <ArrowRight className="ml-1 hidden h-4 w-4 sm:inline" />
         </Button>
       </div>
     </header>
