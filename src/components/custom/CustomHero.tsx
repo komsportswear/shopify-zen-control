@@ -17,7 +17,7 @@ interface Props {
 }
 
 const CustomHero = ({ onQuote, onProjects }: Props) => (
-  <section className="relative flex min-h-[88vh] items-center overflow-hidden pt-16">
+  <section className="relative flex min-h-[640px] items-center overflow-hidden pt-20 lg:min-h-[78vh]">
     <div className="absolute inset-0">
       <video
         className="h-full w-full object-cover object-center"
@@ -32,32 +32,32 @@ const CustomHero = ({ onQuote, onProjects }: Props) => (
       >
         <source src={heroVideo.url} type="video/mp4" />
       </video>
-      <div className="absolute inset-0 bg-gradient-to-r from-foreground/95 via-foreground/80 to-foreground/40" />
+      <div className="absolute inset-0 bg-gradient-to-r from-foreground/95 via-foreground/85 to-foreground/45" />
     </div>
 
-    <div className="container relative z-10 mx-auto px-6 py-20">
-      <div className="max-w-3xl space-y-8">
-        <span className="text-xs font-semibold uppercase tracking-[0.25em] text-accent sm:text-sm">
+    <div className="container relative z-10 mx-auto px-6 pb-24 pt-10 sm:pb-20 lg:py-24">
+      <div className="max-w-xl space-y-6 lg:max-w-2xl lg:space-y-8">
+        <span className="block text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-accent sm:text-sm">
           Productos personalizados KOM
         </span>
 
-        <h1 className="text-4xl font-bold leading-[0.95] tracking-tighter text-background sm:text-6xl lg:text-7xl">
+        <h1 className="text-[2.1rem] font-bold leading-[0.95] tracking-tighter text-background sm:text-5xl lg:text-6xl xl:text-7xl">
           TU EQUIPO. TU EMPRESA. TU MARCA.
           <br />
           <span className="text-accent">HECHA PARA MOVERSE.</span>
         </h1>
 
-        <p className="max-w-xl text-lg text-background/75 sm:text-xl">
+        <p className="max-w-xl text-base text-background/80 sm:text-lg lg:text-xl">
           Uniformes, ropa deportiva y productos personalizados por KOM.
-          <br />
-          <strong className="font-semibold text-background">Desde 10 unidades en ropa deportiva.</strong>
+          <br className="hidden sm:block" />
+          <strong className="font-semibold text-background"> Desde 10 unidades en ropa deportiva.</strong>
         </p>
 
-        <div className="flex flex-col gap-4 sm:flex-row">
+        <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
           <Button
             variant="kom"
             size="lg"
-            className="px-8 py-6 text-base"
+            className="w-full px-8 py-6 text-base sm:w-auto"
             onClick={() => {
               trackEvent("click_cta_hero");
               onQuote();
@@ -66,24 +66,24 @@ const CustomHero = ({ onQuote, onProjects }: Props) => (
             COTIZAR MI PROYECTO
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
-          <Button
-            variant="kom-white"
-            size="lg"
-            className="px-8 py-6 text-base"
+          <button
+            type="button"
+            className="group inline-flex items-center gap-2 py-2 text-sm font-semibold uppercase tracking-wide text-background underline-offset-8 hover:text-accent hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
             onClick={() => {
               trackEvent("view_projects");
               onProjects();
             }}
           >
             VER PROYECTOS REALES
-          </Button>
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </button>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 pt-6 sm:grid-cols-4">
+        <div className="grid grid-cols-2 gap-x-4 gap-y-3 border-t border-background/15 pt-6 sm:grid-cols-4">
           {micro.map((m) => (
             <div key={m.label} className="flex items-start gap-2">
               <m.icon className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-              <span className="text-sm text-background/70">{m.label}</span>
+              <span className="text-xs leading-snug text-background/75 sm:text-sm">{m.label}</span>
             </div>
           ))}
         </div>

@@ -7,12 +7,12 @@ interface Props {
 }
 
 const CustomCases = ({ onQuote }: Props) => (
-  <section id="casos" className="bg-foreground py-20 text-background lg:py-28">
+  <section id="casos" className="scroll-mt-24 bg-background py-20 lg:py-28">
     <div className="container mx-auto px-6">
       <h2 className="mb-4 max-w-2xl text-3xl font-bold tracking-tighter md:text-5xl">
         PROYECTOS QUE YA ESTÁN EN MOVIMIENTO.
       </h2>
-      <p className="mb-12 max-w-xl text-background/60">
+      <p className="mb-12 max-w-xl text-muted-foreground">
         Producimos para equipos, empresas y eventos en Colombia y fuera del país.
       </p>
 

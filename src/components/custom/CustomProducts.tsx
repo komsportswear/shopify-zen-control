@@ -6,9 +6,9 @@ interface Props {
 }
 
 const CustomProducts = ({ onQuote }: Props) => (
-  <section id="productos" className="bg-background py-20 lg:py-28">
+  <section id="productos" className="scroll-mt-24 bg-background py-20 lg:py-28">
     <div className="container mx-auto px-6">
-      <h2 className="mb-12 max-w-2xl text-3xl font-bold tracking-tighter md:text-5xl">
+      <h2 className="mb-10 max-w-2xl text-3xl font-bold tracking-tighter md:text-5xl lg:mb-14">
         PERSONALIZA MUCHO MÁS QUE UN JERSEY.
       </h2>
     </div>
@@ -22,10 +22,12 @@ const CustomProducts = ({ onQuote }: Props) => (
             loading="lazy"
             className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-foreground/85 via-foreground/10 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-foreground via-foreground/45 to-transparent opacity-90" />
           <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
-            <h3 className="text-base font-bold text-background md:text-lg">{p.name}</h3>
-            <p className="text-xs uppercase tracking-wide text-accent md:text-sm">{p.min}</p>
+            <h3 className="text-lg font-bold leading-tight tracking-tight text-background md:text-2xl">{p.name}</h3>
+            <p className="mt-1 text-[0.65rem] font-semibold uppercase tracking-[0.15em] text-accent md:text-xs">
+              {p.min}
+            </p>
           </div>
         </div>
       ))}
@@ -34,7 +36,7 @@ const CustomProducts = ({ onQuote }: Props) => (
     <div className="container mx-auto px-6">
       <button
         onClick={onQuote}
-        className="mt-10 inline-flex items-center gap-2 text-base font-semibold text-foreground underline-offset-4 hover:text-accent hover:underline"
+        className="mt-10 inline-flex items-center gap-2 text-base font-semibold text-foreground underline-offset-4 hover:text-accent hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
       >
         ¿Buscas otro producto? Cuéntanos tu idea
         <ArrowRight className="h-4 w-4" />
