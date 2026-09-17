@@ -219,9 +219,9 @@ const CustomQuoteForm = ({ projectType, setProjectType }: Props) => {
   );
 
   return (
-    <section id="cotizar" className="scroll-mt-20 bg-background py-20 lg:py-28">
-      <div className="container mx-auto px-6">
-        <div className="mx-auto max-w-3xl">
+    <section id="cotizar" className="scroll-mt-24 bg-foreground py-20 lg:py-28">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="mx-auto max-w-3xl border-2 border-accent bg-background p-6 shadow-[0_24px_60px_-30px_rgba(0,0,0,0.6)] sm:p-10 lg:p-14">
           <h2 className="text-3xl font-bold tracking-tighter md:text-5xl">CUÉNTANOS QUÉ TIENES EN MENTE.</h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Recibe una propuesta personalizada según producto, cantidad y necesidades de tu proyecto.
