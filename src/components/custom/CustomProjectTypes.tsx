@@ -7,7 +7,7 @@ interface Props {
 }
 
 const CustomProjectTypes = ({ onSelect }: Props) => (
-  <section id="proyectos-tipo" className="bg-background py-20 lg:py-28">
+  <section id="proyectos-tipo" className="scroll-mt-24 bg-kom-surface py-20 lg:py-28">
     <div className="container mx-auto px-6">
       <h2 className="mb-12 max-w-2xl text-3xl font-bold tracking-tighter md:text-5xl">¿QUÉ QUIERES CREAR?</h2>
 
@@ -19,7 +19,7 @@ const CustomProjectTypes = ({ onSelect }: Props) => (
               trackEvent("select_project_type", { project_type: t.value });
               onSelect(t.value);
             }}
-            className="group flex flex-col items-start gap-4 bg-background p-8 text-left transition-colors hover:bg-kom-surface lg:p-12"
+            className="group flex flex-col items-start gap-4 bg-background p-8 text-left transition-colors hover:bg-foreground hover:text-background lg:p-12"
           >
             <h3 className="text-2xl font-bold uppercase tracking-tight md:text-3xl">{t.title}</h3>
             <p className="max-w-md text-muted-foreground">{t.description}</p>
