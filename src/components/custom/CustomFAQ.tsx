@@ -2,7 +2,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { faqs } from "./data";
 
 const CustomFAQ = () => (
-  <section id="faq" className="scroll-mt-20 bg-background py-20 lg:py-28">
+  <section id="faq" className="scroll-mt-24 bg-kom-surface py-20 lg:py-28">
     <div className="container mx-auto px-6">
       <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
         <h2 className="text-3xl font-bold tracking-tighter md:text-5xl">
