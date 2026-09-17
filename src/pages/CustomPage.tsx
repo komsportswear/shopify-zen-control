@@ -163,12 +163,23 @@ const CustomPage = () => {
       </button>
 
       {/* CTA sticky mobile */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-border bg-background p-3 md:hidden">
-        <Button variant="kom" className="w-full py-5 text-sm font-bold" onClick={() => goToForm()}>
+      <div className="fixed bottom-0 left-0 right-0 z-40 flex items-center gap-2 border-t border-border bg-background p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] md:hidden">
+        <Button variant="kom" className="h-12 flex-1 text-sm font-bold" onClick={() => goToForm()}>
           {inProgress ? "CONTINUAR MI COTIZACIÓN" : "COTIZAR MI PROYECTO"}
         </Button>
+        <button
+          type="button"
+          aria-label="Escríbenos por WhatsApp"
+          onClick={() => {
+            trackEvent("click_whatsapp");
+            window.open(WHATSAPP_URL, "_blank");
+          }}
+          className="flex h-12 w-12 shrink-0 items-center justify-center border border-border text-foreground transition-colors hover:border-accent hover:text-accent"
+        >
+          <MessageCircle className="h-5 w-5" />
+        </button>
       </div>
-      <div className="h-16 md:hidden" />
+      <div className="h-20 md:hidden" />
     </div>
   );
 };
