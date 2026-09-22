@@ -95,10 +95,15 @@ const CustomProducts = ({ onQuote }: Props) => {
               const startX = touchStartX.current;
               const endX = e.changedTouches[0]?.clientX;
               touchStartX.current = null;
+              setPaused(false);
               if (startX === null || endX === undefined) return;
               const distance = endX - startX;
               if (Math.abs(distance) < 48) return;
               go(distance < 0 ? active + 1 : active - 1);
+            }}
+            onTouchCancel={() => {
+              touchStartX.current = null;
+              setPaused(false);
             }}
           >
             {products.map((p, i) => (
@@ -164,7 +169,7 @@ const CustomProducts = ({ onQuote }: Props) => {
         <div className="relative -mx-6 mt-8 md:mx-0">
           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-6 bg-gradient-to-r from-background to-transparent md:hidden" />
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-background to-transparent md:hidden" />
-          <div className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-6 pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-4 md:gap-4 md:overflow-visible md:px-0 md:pb-0 xl:grid-cols-8">
+          <div className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-6 pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:px-0 xl:grid xl:grid-cols-8 xl:gap-4 xl:overflow-visible xl:pb-0">
             {products.map((p, i) => (
               <Button
                 key={p.name}
@@ -176,7 +181,7 @@ const CustomProducts = ({ onQuote }: Props) => {
                 onClick={() => setActive(i)}
                 aria-label={p.name}
                 aria-current={i === active}
-                className={`group/thumb relative h-auto aspect-[4/5] w-[7.25rem] shrink-0 snap-center overflow-hidden rounded-none border bg-muted p-0 text-left transition-[border-color,opacity,transform] duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 md:w-auto ${
+                className={`group/thumb relative h-auto aspect-[4/5] w-[7.25rem] shrink-0 snap-center overflow-hidden rounded-none border bg-muted p-0 text-left transition-[border-color,opacity,transform] duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 md:w-36 xl:w-auto ${
                   i === active
                     ? "border-accent opacity-100"
                     : "border-border opacity-65 hover:border-foreground/30 hover:opacity-100"
