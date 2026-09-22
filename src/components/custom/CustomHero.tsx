@@ -50,7 +50,7 @@ const CustomHero = ({ onQuote, onProjects }: Props) => (
       <div className="absolute inset-0 bg-gradient-to-b from-foreground/10 via-transparent to-foreground md:bg-gradient-to-r md:from-foreground/95 md:via-foreground/85 md:to-foreground/45" />
     </div>
 
-    <div className="container relative z-10 mx-auto -mt-px px-6 pb-24 pt-7 sm:pb-20 md:mt-0 md:py-16 lg:py-24">
+    <div className="container relative z-10 mx-auto -mt-px px-6 pb-8 pt-7 sm:pb-12 md:mt-0 md:py-16 lg:py-24">
       <div className="max-w-xl space-y-6 lg:max-w-2xl lg:space-y-8">
         <span className="block text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-accent sm:text-sm">
           Productos personalizados KOM
