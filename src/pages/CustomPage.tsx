@@ -136,7 +136,7 @@ const CustomPage = () => {
         <CustomHero onQuote={() => goToForm()} onProjects={() => scrollTo("casos")} />
         <CustomTrust />
         <CustomProjectTypes onSelect={(v) => goToForm(v)} />
-        <CustomDesignHelp />
+        <CustomDesignHelp onQuote={() => goToForm()} />
         <CustomProducts onQuote={() => goToForm()} />
         <CustomQuoteForm projectType={projectType} setProjectType={setProjectType} />
         <CustomPricing />

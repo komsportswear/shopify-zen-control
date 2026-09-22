@@ -1,6 +1,7 @@
 type EventName =
   | "click_cta_hero"
   | "select_project_type"
+  | "click_cta_diseno"
   | "start_quote"
   | "complete_quote"
   | "click_whatsapp"

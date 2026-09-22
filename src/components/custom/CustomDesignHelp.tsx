@@ -1,5 +1,7 @@
-import { Lightbulb, PenLine, Shirt } from "lucide-react";
+import { ArrowRight, Lightbulb, PenLine, Shirt } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import designHelpImg from "@/assets/design-help.webp";
+import { trackEvent } from "@/lib/analytics";
 
 const cards = [
   { icon: Shirt, title: "Ya tengo diseño", text: "Lo adaptamos técnicamente para producción." },
@@ -7,7 +9,7 @@ const cards = [
   { icon: Lightbulb, title: "No sé por dónde empezar", text: "Te ayudamos a construirla desde cero." },
 ];
 
-const CustomDesignHelp = () => (
+const CustomDesignHelp = ({ onQuote }: { onQuote: () => void }) => (
   <section className="bg-foreground py-20 text-background lg:py-28">
     <div className="container mx-auto grid items-center gap-12 px-6 lg:grid-cols-2 lg:gap-20">
       <div className="space-y-8">
@@ -24,6 +26,23 @@ const CustomDesignHelp = () => (
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="pt-2">
+          <Button
+            variant="kom"
+            className="inline-flex h-12 w-full items-center justify-center gap-2 px-8 text-sm sm:w-auto"
+            onClick={() => {
+              trackEvent("click_cta_diseno");
+              onQuote();
+            }}
+          >
+            Quiero mi cotización
+            <ArrowRight className="h-4 w-4" />
+          </Button>
+          <p className="mt-3 text-xs uppercase tracking-[0.15em] text-background/40">
+            Respuesta en menos de 24 horas hábiles
+          </p>
         </div>
 
         <div className="flex items-center gap-3 pt-4 text-xs font-semibold uppercase tracking-[0.2em] text-background/50">
