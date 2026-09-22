@@ -20,7 +20,7 @@ interface Props {
 
 const CustomHero = ({ onQuote, onProjects }: Props) => (
   <section className="relative overflow-hidden bg-foreground pt-20 md:flex md:min-h-[640px] md:items-center lg:min-h-[78vh]">
-    <div className="relative aspect-square w-full md:absolute md:inset-0 md:aspect-auto">
+    <div className="relative aspect-[3/2] w-full md:absolute md:inset-0 md:aspect-auto">
       <video
         className="h-full w-full object-cover md:hidden"
         autoPlay
