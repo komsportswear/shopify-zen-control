@@ -70,6 +70,7 @@ const CustomHero = ({ onQuote, onProjects }: Props) => (
 
         <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
           <Button
+            id="hero-cta"
             variant="kom"
             size="lg"
             className="w-full px-8 py-6 text-base sm:w-auto"
