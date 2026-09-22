@@ -153,7 +153,7 @@ const CustomProducts = ({ onQuote }: Props) => {
               variant="kom"
               size="lg"
               onClick={onQuote}
-              className="mt-6 h-13 w-full rounded-none px-8 text-sm font-bold tracking-[0.1em] sm:w-auto"
+              className="mt-6 h-12 w-full rounded-none px-8 text-sm font-bold tracking-[0.1em] sm:w-auto"
             >
               Cotizar este producto
               <ArrowRight className="h-4 w-4" />
@@ -166,16 +166,17 @@ const CustomProducts = ({ onQuote }: Props) => {
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-background to-transparent md:hidden" />
           <div className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-6 pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-4 md:gap-4 md:overflow-visible md:px-0 md:pb-0 xl:grid-cols-8">
             {products.map((p, i) => (
-              <button
+              <Button
                 key={p.name}
                 ref={(node) => {
                   thumbnailRefs.current[i] = node;
                 }}
                 type="button"
+                variant="ghost"
                 onClick={() => setActive(i)}
                 aria-label={p.name}
                 aria-current={i === active}
-                className={`group/thumb relative aspect-[4/5] w-[7.25rem] shrink-0 snap-center overflow-hidden border bg-muted text-left transition-[border-color,opacity,transform] duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 md:w-auto ${
+                className={`group/thumb relative h-auto aspect-[4/5] w-[7.25rem] shrink-0 snap-center overflow-hidden rounded-none border bg-muted p-0 text-left transition-[border-color,opacity,transform] duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 md:w-auto ${
                   i === active
                     ? "border-accent opacity-100"
                     : "border-border opacity-65 hover:border-foreground/30 hover:opacity-100"
@@ -198,7 +199,7 @@ const CustomProducts = ({ onQuote }: Props) => {
                     i === active ? "scale-x-100" : "scale-x-0"
                   }`}
                 />
-              </button>
+              </Button>
 
             ))}
           </div>
