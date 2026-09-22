@@ -118,6 +118,9 @@ const CustomProducts = ({ onQuote }: Props) => {
             <p className="mt-2 text-xs font-semibold uppercase tracking-[0.15em] text-accent md:text-sm">
               {current.min}
             </p>
+            <p className="mt-4 max-w-md text-base leading-relaxed text-muted-foreground">
+              {current.description}
+            </p>
             <button
               onClick={onQuote}
               className="mt-6 inline-flex w-full items-center justify-center gap-2 bg-accent px-8 py-4 text-sm font-bold uppercase tracking-[0.1em] text-accent-foreground transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 sm:w-auto"
