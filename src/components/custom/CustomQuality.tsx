@@ -31,9 +31,9 @@ const CustomQuality = () => (
         </div>
 
         <div className="grid grid-cols-2 gap-2">
-          <img src={factory} alt="Planta de producción KOM con impresión por sublimación" loading="lazy" className="col-span-2 h-56 w-full object-cover lg:h-72" />
-          <img src={cutting} alt="Corte láser de paneles de tela técnica" loading="lazy" className="h-44 w-full object-cover lg:h-56" />
-          <img src={stitching} alt="Confección de costuras planas en prenda técnica" loading="lazy" className="h-44 w-full object-cover lg:h-56" />
+          <img src={printing} alt="Impresión digital por sublimación de jerseys en la planta de KOM" loading="lazy" className="col-span-2 h-56 w-full object-cover lg:h-72" />
+          <img src={cutting} alt="Corte de paneles de tela técnica sobre mesa de producción" loading="lazy" className="h-44 w-full object-cover lg:h-56" />
+          <img src={stitching} alt="Confección de prenda técnica en máquina industrial" loading="lazy" className="h-44 w-full object-cover lg:h-56" />
         </div>
       </div>
     </div>
