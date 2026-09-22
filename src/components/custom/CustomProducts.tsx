@@ -140,10 +140,10 @@ const CustomProducts = ({ onQuote }: Props) => {
                 onClick={() => setActive(i)}
                 aria-label={p.name}
                 aria-current={i === active}
-                className={`relative aspect-[3/4] w-20 shrink-0 overflow-hidden border-2 transition-all lg:w-auto ${
+                className={`group/thumb relative aspect-[3/4] w-20 shrink-0 overflow-hidden border-2 transition-all lg:w-auto ${
                   i === active
                     ? "border-accent opacity-100"
-                    : "border-transparent opacity-50 hover:opacity-100"
+                    : "border-transparent opacity-60 hover:opacity-100"
                 }`}
               >
                 <img
@@ -152,7 +152,11 @@ const CustomProducts = ({ onQuote }: Props) => {
                   loading="lazy"
                   className="h-full w-full object-cover"
                 />
+                <span className="absolute inset-x-0 bottom-0 bg-foreground/80 px-1.5 py-1 text-center text-[10px] font-bold uppercase leading-tight tracking-[0.08em] text-background">
+                  {p.short}
+                </span>
               </button>
+
             ))}
           </div>
         </div>
