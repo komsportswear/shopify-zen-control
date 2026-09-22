@@ -122,15 +122,15 @@ const CustomPage = () => {
     }
   }, []);
 
-  // La barra fija inferior solo aparece una vez superada la banda de cifras.
+  // La barra fija inferior aparece cuando el CTA del banner sale de pantalla.
   useEffect(() => {
-    const trust = document.getElementById("confianza");
-    if (!trust) return;
+    const cta = document.getElementById("hero-cta");
+    if (!cta) return;
 
     let raf = 0;
     const update = () => {
       raf = 0;
-      const bottom = trust.getBoundingClientRect().bottom;
+      const bottom = cta.getBoundingClientRect().bottom;
       setShowBar((prev) => (bottom <= 0 ? true : bottom > 24 ? false : prev));
     };
     const onScroll = () => {
