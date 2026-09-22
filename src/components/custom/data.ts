@@ -1,6 +1,3 @@
-import catRopaCiclismo from "@/assets/cat-ropa-ciclismo.jpg";
-import catRopaRunning from "@/assets/cat-ropa-running.jpg";
-import catPersonalizados from "@/assets/cat-personalizados.jpg";
 import prodJersey from "@/assets/prod-jersey.webp";
 import prodBibshorts from "@/assets/prod-bibshorts.webp";
 import prodRunning from "@/assets/prod-running.webp";

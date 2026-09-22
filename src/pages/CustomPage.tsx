@@ -131,7 +131,7 @@ const CustomPage = () => {
     <div className="min-h-screen">
       <Header />
       <main>
-        <CustomHero onQuote={() => goToForm()} onProjects={() => scrollTo("casos")} />
+        <CustomHero onQuote={() => goToForm()} onProjects={() => scrollTo("productos")} />
         <CustomTrust />
         <CustomProjectTypes onSelect={(v) => goToForm(v)} />
         <CustomDesignHelp onQuote={() => goToForm()} />
