@@ -118,6 +118,9 @@ const CustomProducts = ({ onQuote }: Props) => {
             <p className="mt-2 text-xs font-semibold uppercase tracking-[0.15em] text-accent md:text-sm">
               {current.min}
             </p>
+            <p className="mt-4 max-w-md text-base leading-relaxed text-muted-foreground">
+              {current.description}
+            </p>
             <button
               onClick={onQuote}
               className="mt-6 inline-flex w-full items-center justify-center gap-2 bg-accent px-8 py-4 text-sm font-bold uppercase tracking-[0.1em] text-accent-foreground transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 sm:w-auto"
@@ -137,10 +140,10 @@ const CustomProducts = ({ onQuote }: Props) => {
                 onClick={() => setActive(i)}
                 aria-label={p.name}
                 aria-current={i === active}
-                className={`relative aspect-[3/4] w-20 shrink-0 overflow-hidden border-2 transition-all lg:w-auto ${
+                className={`group/thumb relative aspect-[3/4] w-20 shrink-0 overflow-hidden border-2 transition-all lg:w-auto ${
                   i === active
                     ? "border-accent opacity-100"
-                    : "border-transparent opacity-50 hover:opacity-100"
+                    : "border-transparent opacity-60 hover:opacity-100"
                 }`}
               >
                 <img
@@ -149,7 +152,11 @@ const CustomProducts = ({ onQuote }: Props) => {
                   loading="lazy"
                   className="h-full w-full object-cover"
                 />
+                <span className="absolute inset-x-0 bottom-0 bg-foreground/80 px-1.5 py-1 text-center text-[10px] font-bold uppercase leading-tight tracking-[0.08em] text-background">
+                  {p.short}
+                </span>
               </button>
+
             ))}
           </div>
         </div>

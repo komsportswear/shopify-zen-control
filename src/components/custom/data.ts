@@ -44,15 +44,64 @@ export const projectTypes = [
 ];
 
 export const products = [
-  { name: "Jersey personalizado", min: "Desde 10 unidades", image: prodJersey },
-  { name: "Bib shorts / pantalonetas", min: "Desde 10 unidades", image: prodBibshorts },
-  { name: "Camiseta de running", min: "Desde 10 unidades", image: prodRunning },
-  { name: "Uniformes deportivos", min: "Desde 10 unidades", image: prodUniformes },
-  { name: "Skinsuits y enterizos", min: "Desde 10 unidades", image: prodChalecos },
-  { name: "Medias personalizadas", min: "Cantidad mínima según producto", image: prodMedias },
-  { name: "Gorras y viseras", min: "Cantidad mínima según producto", image: prodGorras },
-  { name: "Kits corporativos", min: "Cantidad mínima según producto", image: prodCorporativos },
+  {
+    name: "Jersey personalizado",
+    short: "Jersey",
+    min: "Desde 10 unidades",
+    description: "Jersey de ciclismo con tu diseño de extremo a extremo: sublimación total, corte técnico y opciones de tela según el clima.",
+    image: prodJersey,
+  },
+  {
+    name: "Bib shorts / pantalonetas",
+    short: "Bib shorts",
+    min: "Desde 10 unidades",
+    description: "Bib shorts y pantalonetas con badana, bandas de sujeción y personalización en piernas y tirantes.",
+    image: prodBibshorts,
+  },
+  {
+    name: "Camiseta de running",
+    short: "Running",
+    min: "Desde 10 unidades",
+    description: "Camisetas ligeras y transpirables para entrenamiento, competencia o eventos, con tu identidad completa.",
+    image: prodRunning,
+  },
+  {
+    name: "Uniformes deportivos",
+    short: "Uniformes",
+    min: "Desde 10 unidades",
+    description: "Sets completos para equipos y clubes, coherentes entre prendas y listos para repetir en futuras temporadas.",
+    image: prodUniformes,
+  },
+  {
+    name: "Skinsuits y enterizos",
+    short: "Enterizos",
+    min: "Desde 10 unidades",
+    description: "Enterizos de una sola pieza para competencia, con ajuste ceñido y diseño continuo sin cortes visibles.",
+    image: prodChalecos,
+  },
+  {
+    name: "Medias personalizadas",
+    short: "Medias",
+    min: "Cantidad mínima según producto",
+    description: "Medias con tu logo, colores y altura a elegir; el detalle que cierra el uniforme de todo el equipo.",
+    image: prodMedias,
+  },
+  {
+    name: "Gorras y viseras",
+    short: "Gorras",
+    min: "Cantidad mínima según producto",
+    description: "Gorras y viseras livianas para entrenar o para entregar como recuerdo de marca en eventos.",
+    image: prodGorras,
+  },
+  {
+    name: "Kits corporativos",
+    short: "Corporativos",
+    min: "Cantidad mínima según producto",
+    description: "Kits de ropa y accesorios deportivos para empresas: empleados, clientes, activaciones y patrocinios.",
+    image: prodCorporativos,
+  },
 ];
+
 
 /** Beneficio por volumen. Reemplazar por porcentajes reales cuando estén definidos. */
 export const priceTiers = [
