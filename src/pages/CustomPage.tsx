@@ -131,7 +131,7 @@ const CustomPage = () => {
     const update = () => {
       raf = 0;
       const bottom = trust.getBoundingClientRect().bottom;
-      setShowBar((prev) => (prev ? bottom > 24 : bottom <= 0));
+      setShowBar((prev) => (bottom <= 0 ? true : bottom > 24 ? false : prev));
     };
     const onScroll = () => {
       if (!raf) raf = requestAnimationFrame(update);
