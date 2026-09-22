@@ -1,4 +1,4 @@
-import factory from "@/assets/quality-factory.jpg";
+import printing from "@/assets/quality-printing.jpg";
 import cutting from "@/assets/quality-cutting.jpg";
 import stitching from "@/assets/quality-stitching.jpg";
 
