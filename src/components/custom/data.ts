@@ -118,7 +118,6 @@ export const cases = [
   { type: "Eventos", image: catRopaRunning },
 ];
 
-const _removed = null;
 
 export const faqs = [
   {
