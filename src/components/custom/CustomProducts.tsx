@@ -137,7 +137,7 @@ const CustomProducts = ({ onQuote }: Props) => {
                 onClick={() => setActive(i)}
                 aria-label={p.name}
                 aria-current={i === active}
-                className={`relative aspect-square w-24 shrink-0 overflow-hidden border-2 transition-all lg:w-auto ${
+                className={`relative aspect-[3/4] w-20 shrink-0 overflow-hidden border-2 transition-all lg:w-auto ${
                   i === active
                     ? "border-accent opacity-100"
                     : "border-transparent opacity-50 hover:opacity-100"
