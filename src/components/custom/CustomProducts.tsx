@@ -54,14 +54,14 @@ const CustomProducts = ({ onQuote }: Props) => {
         </h2>
 
         <div
-          className="grid gap-8 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] lg:items-center lg:gap-14"
+          className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)] lg:items-center lg:gap-14"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
           onFocusCapture={() => setPaused(true)}
           onBlurCapture={() => setPaused(false)}
         >
           <div
-            className="group relative aspect-[4/3] overflow-hidden bg-muted md:aspect-[16/10]"
+            className="group relative mx-auto aspect-[3/4] w-full max-w-[520px] overflow-hidden bg-muted"
             role="region"
             aria-roledescription="carrusel"
             aria-label="Productos personalizables"
