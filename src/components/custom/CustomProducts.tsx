@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { products } from "./data";
 
 interface Props {
@@ -13,6 +14,8 @@ const CustomProducts = ({ onQuote }: Props) => {
   const [paused, setPaused] = useState(false);
   const [visible, setVisible] = useState(false);
   const sectionRef = useRef<HTMLElement | null>(null);
+  const thumbnailRefs = useRef<Array<HTMLButtonElement | null>>([]);
+  const touchStartX = useRef<number | null>(null);
 
   const go = useCallback((next: number) => {
     setActive((next + products.length) % products.length);
@@ -40,6 +43,14 @@ const CustomProducts = ({ onQuote }: Props) => {
     return () => window.clearInterval(id);
   }, [paused, visible]);
 
+  useEffect(() => {
+    thumbnailRefs.current[active]?.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "center",
+    });
+  }, [active]);
+
   const current = products[active];
 
   return (
@@ -61,7 +72,7 @@ const CustomProducts = ({ onQuote }: Props) => {
           onBlurCapture={() => setPaused(false)}
         >
           <div
-            className="group relative mx-auto aspect-[3/4] w-full max-w-[520px] overflow-hidden bg-muted"
+            className="group relative mx-auto aspect-[3/4] w-full max-w-[520px] touch-pan-y overflow-hidden bg-muted"
             role="region"
             aria-roledescription="carrusel"
             aria-label="Productos personalizables"
@@ -75,6 +86,19 @@ const CustomProducts = ({ onQuote }: Props) => {
                 e.preventDefault();
                 go(active - 1);
               }
+            }}
+            onTouchStart={(e) => {
+              touchStartX.current = e.touches[0]?.clientX ?? null;
+              setPaused(true);
+            }}
+            onTouchEnd={(e) => {
+              const startX = touchStartX.current;
+              const endX = e.changedTouches[0]?.clientX;
+              touchStartX.current = null;
+              if (startX === null || endX === undefined) return;
+              const distance = endX - startX;
+              if (Math.abs(distance) < 48) return;
+              go(distance < 0 ? active + 1 : active - 1);
             }}
           >
             {products.map((p, i) => (
@@ -90,22 +114,26 @@ const CustomProducts = ({ onQuote }: Props) => {
               />
             ))}
 
-            <button
+            <Button
               type="button"
+              variant="ghost"
+              size="icon"
               onClick={() => go(active - 1)}
               aria-label="Producto anterior"
-              className="absolute left-0 top-1/2 -translate-y-1/2 bg-background/80 p-3 text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              className="absolute left-3 top-1/2 h-11 w-11 -translate-y-1/2 rounded-none bg-background/85 text-foreground shadow-md backdrop-blur-sm hover:bg-accent hover:text-accent-foreground"
             >
               <ChevronLeft className="h-5 w-5" />
-            </button>
-            <button
+            </Button>
+            <Button
               type="button"
+              variant="ghost"
+              size="icon"
               onClick={() => go(active + 1)}
               aria-label="Producto siguiente"
-              className="absolute right-0 top-1/2 -translate-y-1/2 bg-background/80 p-3 text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              className="absolute right-3 top-1/2 h-11 w-11 -translate-y-1/2 rounded-none bg-background/85 text-foreground shadow-md backdrop-blur-sm hover:bg-accent hover:text-accent-foreground"
             >
               <ChevronRight className="h-5 w-5" />
-            </button>
+            </Button>
           </div>
 
           <div aria-live="polite">
@@ -121,53 +149,69 @@ const CustomProducts = ({ onQuote }: Props) => {
             <p className="mt-4 max-w-md text-base leading-relaxed text-muted-foreground">
               {current.description}
             </p>
-            <button
+            <Button
+              variant="kom"
+              size="lg"
               onClick={onQuote}
-              className="mt-6 inline-flex w-full items-center justify-center gap-2 bg-accent px-8 py-4 text-sm font-bold uppercase tracking-[0.1em] text-accent-foreground transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 sm:w-auto"
+              className="mt-6 h-13 w-full rounded-none px-8 text-sm font-bold tracking-[0.1em] sm:w-auto"
             >
               Cotizar este producto
               <ArrowRight className="h-4 w-4" />
-            </button>
+            </Button>
           </div>
         </div>
 
-        <div className="-mx-6 mt-8 overflow-x-auto px-6 lg:mx-0 lg:px-0">
-          <div className="flex min-w-max gap-3 lg:grid lg:min-w-0 lg:grid-cols-8">
+        <div className="relative -mx-6 mt-8 md:mx-0">
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-6 bg-gradient-to-r from-background to-transparent md:hidden" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-background to-transparent md:hidden" />
+          <div className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-6 pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-4 md:gap-4 md:overflow-visible md:px-0 md:pb-0 xl:grid-cols-8">
             {products.map((p, i) => (
               <button
                 key={p.name}
+                ref={(node) => {
+                  thumbnailRefs.current[i] = node;
+                }}
                 type="button"
                 onClick={() => setActive(i)}
                 aria-label={p.name}
                 aria-current={i === active}
-                className={`group/thumb relative aspect-[3/4] w-20 shrink-0 overflow-hidden border-2 transition-all lg:w-auto ${
+                className={`group/thumb relative aspect-[4/5] w-[7.25rem] shrink-0 snap-center overflow-hidden border bg-muted text-left transition-[border-color,opacity,transform] duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 md:w-auto ${
                   i === active
                     ? "border-accent opacity-100"
-                    : "border-transparent opacity-60 hover:opacity-100"
+                    : "border-border opacity-65 hover:border-foreground/30 hover:opacity-100"
                 }`}
               >
                 <img
                   src={p.image}
                   alt=""
                   loading="lazy"
-                  className="h-full w-full object-cover"
+                  className={`h-full w-full object-cover transition-transform duration-500 ${
+                    i === active ? "scale-100" : "scale-[1.03] group-hover/thumb:scale-100"
+                  }`}
                 />
-                <span className="absolute inset-x-0 bottom-0 bg-foreground/80 px-1.5 py-1 text-center text-[10px] font-bold uppercase leading-tight tracking-[0.08em] text-background">
+                <span className="absolute inset-x-0 bottom-0 flex min-h-10 items-center justify-center bg-foreground/90 px-2 py-1.5 text-center text-[10px] font-bold uppercase leading-tight tracking-[0.08em] text-background backdrop-blur-sm">
                   {p.short}
                 </span>
+                <span
+                  aria-hidden="true"
+                  className={`absolute inset-x-0 bottom-0 h-0.5 bg-accent transition-transform duration-300 ${
+                    i === active ? "scale-x-100" : "scale-x-0"
+                  }`}
+                />
               </button>
 
             ))}
           </div>
         </div>
 
-        <button
+        <Button
+          variant="link"
           onClick={onQuote}
-          className="mt-10 inline-flex items-center gap-2 text-base font-semibold text-foreground underline-offset-4 hover:text-accent hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+          className="mt-7 h-auto whitespace-normal rounded-none p-0 text-left text-base font-semibold text-foreground underline-offset-4 hover:text-accent hover:underline md:mt-10"
         >
           ¿Buscas otro producto? Cuéntanos tu idea
           <ArrowRight className="h-4 w-4" />
-        </button>
+        </Button>
       </div>
     </section>
   );
