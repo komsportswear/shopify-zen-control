@@ -14,6 +14,7 @@ const CustomProducts = ({ onQuote }: Props) => {
   const [paused, setPaused] = useState(false);
   const [visible, setVisible] = useState(false);
   const sectionRef = useRef<HTMLElement | null>(null);
+  const stripRef = useRef<HTMLDivElement | null>(null);
   const thumbnailRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const touchStartX = useRef<number | null>(null);
 
@@ -43,12 +44,18 @@ const CustomProducts = ({ onQuote }: Props) => {
     return () => window.clearInterval(id);
   }, [paused, visible]);
 
+  // Centra la miniatura activa dentro de la tira, sin desplazar la página.
   useEffect(() => {
-    thumbnailRefs.current[active]?.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-      inline: "center",
-    });
+    const strip = stripRef.current;
+    const thumb = thumbnailRefs.current[active];
+    if (!strip || !thumb) return;
+    const max = strip.scrollWidth - strip.clientWidth;
+    if (max <= 0) return;
+    const target =
+      strip.scrollLeft +
+      (thumb.getBoundingClientRect().left - strip.getBoundingClientRect().left) -
+      (strip.clientWidth - thumb.clientWidth) / 2;
+    strip.scrollTo({ left: Math.min(Math.max(target, 0), max), behavior: "smooth" });
   }, [active]);
 
   const current = products[active];
@@ -169,7 +176,10 @@ const CustomProducts = ({ onQuote }: Props) => {
         <div className="relative -mx-6 mt-8 md:mx-0">
           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-6 bg-gradient-to-r from-background to-transparent md:hidden" />
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-background to-transparent md:hidden" />
-          <div className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-6 pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:px-0 xl:grid xl:grid-cols-8 xl:gap-4 xl:overflow-visible xl:pb-0">
+          <div
+            ref={stripRef}
+            className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-6 pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:px-0 xl:grid xl:grid-cols-8 xl:gap-4 xl:overflow-visible xl:pb-0"
+          >
             {products.map((p, i) => (
               <Button
                 key={p.name}
