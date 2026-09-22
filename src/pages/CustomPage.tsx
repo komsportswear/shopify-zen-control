@@ -101,6 +101,7 @@ const Header = () => {
 const CustomPage = () => {
   const [projectType, setProjectType] = useState("");
   const [inProgress, setInProgress] = useState(false);
+  const [showBar, setShowBar] = useState(false);
 
   useEffect(() => {
     document.title = "Ropa deportiva personalizada | KOM Sportswear";
@@ -119,6 +120,31 @@ const CustomPage = () => {
     } catch {
       /* almacenamiento no disponible */
     }
+  }, []);
+
+  // La barra fija inferior solo aparece una vez superada la banda de cifras.
+  useEffect(() => {
+    const trust = document.getElementById("confianza");
+    if (!trust) return;
+
+    let raf = 0;
+    const update = () => {
+      raf = 0;
+      const bottom = trust.getBoundingClientRect().bottom;
+      setShowBar((prev) => (prev ? bottom > 24 : bottom <= 0));
+    };
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      if (raf) cancelAnimationFrame(raf);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   const goToForm = (type?: string) => {
@@ -157,8 +183,13 @@ const CustomPage = () => {
         <MessageCircle className="h-6 w-6" />
       </button>
 
-      {/* CTA sticky mobile */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 flex items-center gap-2 border-t border-border bg-background p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] md:hidden">
+      {/* CTA sticky mobile: aparece al superar la banda de cifras */}
+      <div
+        aria-hidden={!showBar}
+        className={`fixed bottom-0 left-0 right-0 z-40 flex items-center gap-2 border-t border-border bg-background p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] transition-transform duration-300 ease-out motion-reduce:transition-none md:hidden ${
+          showBar ? "translate-y-0" : "pointer-events-none translate-y-full"
+        }`}
+      >
         <Button variant="kom" className="h-12 flex-1 text-sm font-bold" onClick={() => goToForm()}>
           {inProgress ? "CONTINUAR MI COTIZACIÓN" : "COTIZAR MI PROYECTO"}
         </Button>

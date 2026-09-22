@@ -6,7 +6,10 @@ const stats = [
 ];
 
 const CustomTrust = () => (
-  <section className="border-y border-background/10 bg-foreground py-10 text-background lg:py-12">
+  <section
+    id="confianza"
+    className="border-y border-background/10 bg-foreground py-10 text-background lg:py-12"
+  >
     <div className="container mx-auto px-6">
       <div className="grid grid-cols-2 md:grid-cols-4">
         {stats.map((s, i) => (
