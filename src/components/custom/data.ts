@@ -118,19 +118,6 @@ export const cases = [
   { type: "Eventos", image: catRopaRunning },
 ];
 
-export const deliveryTimes = [
-  { range: "10–49 unidades", time: "10 a 15 días hábiles" },
-  { range: "50–199 unidades", time: "15 a 20 días hábiles" },
-  { range: "200–999 unidades", time: "20 a 30 días hábiles" },
-  { range: "1000+ unidades", time: "Según cronograma acordado" },
-];
-
-export const serviceIncludes = [
-  { title: "Diseño y adaptación técnica", text: "Trabajamos tu identidad sobre el patrón real de cada prenda." },
-  { title: "Muestra digital para aprobación", text: "Nada entra a producción sin tu visto bueno." },
-  { title: "Curva de tallas", text: "Te acompañamos a definir tallas con nuestra tabla y prendas de referencia." },
-  { title: "Control de calidad y empaque", text: "Revisión prenda por prenda y empaque individual." },
-];
 
 export const faqs = [
   {
