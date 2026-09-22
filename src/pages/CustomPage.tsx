@@ -10,7 +10,6 @@ import CustomDesignHelp from "@/components/custom/CustomDesignHelp";
 import CustomProducts from "@/components/custom/CustomProducts";
 import CustomQuoteForm from "@/components/custom/CustomQuoteForm";
 import CustomPricing from "@/components/custom/CustomPricing";
-import CustomDelivery from "@/components/custom/CustomDelivery";
 import CustomQuality from "@/components/custom/CustomQuality";
 import CustomProcess from "@/components/custom/CustomProcess";
 import CustomCases from "@/components/custom/CustomCases";
@@ -23,7 +22,6 @@ import { trackEvent } from "@/lib/analytics";
 const navLinks = [
   { href: "#proyectos-tipo", label: "Proyectos" },
   { href: "#productos", label: "Productos" },
-  { href: "#tiempos", label: "Tiempos" },
   { href: "#calidad", label: "Calidad" },
   { href: "#proceso", label: "Proceso" },
   { href: "#faq", label: "FAQ" },
