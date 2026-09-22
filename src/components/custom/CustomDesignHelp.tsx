@@ -40,6 +40,8 @@ const CustomDesignHelp = ({ onQuote }: { onQuote: () => void }) => (
             Quiero mi cotización
             <ArrowRight className="h-4 w-4" />
           </Button>
+        </div>
+
 
         <div className="flex items-center gap-3 pt-4 text-xs font-semibold uppercase tracking-[0.2em] text-background/50">
           <span>Idea</span>
