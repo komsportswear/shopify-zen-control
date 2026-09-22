@@ -12,7 +12,6 @@ import CustomQuoteForm from "@/components/custom/CustomQuoteForm";
 import CustomPricing from "@/components/custom/CustomPricing";
 import CustomQuality from "@/components/custom/CustomQuality";
 import CustomProcess from "@/components/custom/CustomProcess";
-import CustomCases from "@/components/custom/CustomCases";
 import CustomFAQ from "@/components/custom/CustomFAQ";
 import CustomFinalForm from "@/components/custom/CustomFinalForm";
 import CustomFooter from "@/components/custom/CustomFooter";
