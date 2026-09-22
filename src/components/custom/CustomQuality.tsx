@@ -1,6 +1,6 @@
-import texture from "@/assets/b2b-texture.jpg";
-import running from "@/assets/b2b-running.jpg";
-import medias from "@/assets/cat-medias.jpg";
+import factory from "@/assets/quality-factory.jpg";
+import cutting from "@/assets/quality-cutting.jpg";
+import stitching from "@/assets/quality-stitching.jpg";
 
 const benefits = [
   "Materiales técnicos",
@@ -31,9 +31,9 @@ const CustomQuality = () => (
         </div>
 
         <div className="grid grid-cols-2 gap-2">
-          <img src={texture} alt="Detalle de tela técnica" loading="lazy" className="col-span-2 h-56 w-full object-cover lg:h-72" />
-          <img src={running} alt="Detalle de costuras y acabados" loading="lazy" className="h-44 w-full object-cover lg:h-56" />
-          <img src={medias} alt="Detalle de sublimación" loading="lazy" className="h-44 w-full object-cover lg:h-56" />
+          <img src={factory} alt="Planta de producción KOM con impresión por sublimación" loading="lazy" className="col-span-2 h-56 w-full object-cover lg:h-72" />
+          <img src={cutting} alt="Corte láser de paneles de tela técnica" loading="lazy" className="h-44 w-full object-cover lg:h-56" />
+          <img src={stitching} alt="Confección de costuras planas en prenda técnica" loading="lazy" className="h-44 w-full object-cover lg:h-56" />
         </div>
       </div>
     </div>
