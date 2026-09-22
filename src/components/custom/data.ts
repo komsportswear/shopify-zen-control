@@ -1,6 +1,3 @@
-import catRopaCiclismo from "@/assets/cat-ropa-ciclismo.jpg";
-import catRopaRunning from "@/assets/cat-ropa-running.jpg";
-import catPersonalizados from "@/assets/cat-personalizados.jpg";
 import prodJersey from "@/assets/prod-jersey.webp";
 import prodBibshorts from "@/assets/prod-bibshorts.webp";
 import prodRunning from "@/assets/prod-running.webp";
@@ -111,12 +108,6 @@ export const priceTiers = [
   { range: "1000+ UNIDADES", price: "Cotización especial" },
 ];
 
-/** Proyectos: solo imagen hasta tener casos reales autorizados. */
-export const cases = [
-  { type: "Equipos y clubes", image: catRopaCiclismo },
-  { type: "Empresas", image: catPersonalizados },
-  { type: "Eventos", image: catRopaRunning },
-];
 
 
 export const faqs = [

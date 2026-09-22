@@ -74,7 +74,7 @@ const CustomHero = ({ onQuote, onProjects }: Props) => (
               onProjects();
             }}
           >
-            VER PROYECTOS REALES
+            VER PRODUCTOS
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </button>
         </div>
