@@ -138,7 +138,6 @@ const CustomPage = () => {
         <CustomProducts onQuote={() => goToForm()} />
         <CustomQuoteForm projectType={projectType} setProjectType={setProjectType} />
         <CustomPricing />
-        <CustomDelivery />
         <CustomQuality />
         <CustomProcess />
         <CustomCases onQuote={() => goToForm()} />
