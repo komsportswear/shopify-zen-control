@@ -111,12 +111,6 @@ export const priceTiers = [
   { range: "1000+ UNIDADES", price: "Cotización especial" },
 ];
 
-/** Proyectos: solo imagen hasta tener casos reales autorizados. */
-export const cases = [
-  { type: "Equipos y clubes", image: catRopaCiclismo },
-  { type: "Empresas", image: catPersonalizados },
-  { type: "Eventos", image: catRopaRunning },
-];
 
 
 export const faqs = [

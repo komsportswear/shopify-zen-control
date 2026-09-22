@@ -140,7 +140,6 @@ const CustomPage = () => {
         <CustomPricing />
         <CustomQuality />
         <CustomProcess />
-        <CustomCases onQuote={() => goToForm()} />
         <CustomFAQ />
         <CustomFinalForm onQuote={() => goToForm()} />
       </main>

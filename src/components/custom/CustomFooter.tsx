@@ -17,7 +17,6 @@ const CustomFooter = () => (
           <a href="#proyectos-tipo" className="block text-sm text-background/70 transition-colors hover:text-accent">Proyectos</a>
           <a href="#productos" className="block text-sm text-background/70 transition-colors hover:text-accent">Productos</a>
           <a href="#proceso" className="block text-sm text-background/70 transition-colors hover:text-accent">Proceso</a>
-          <a href="#casos" className="block text-sm text-background/70 transition-colors hover:text-accent">Casos</a>
           <a href="#cotizar" className="block text-sm text-background/70 transition-colors hover:text-accent">Cotizar</a>
         </div>
       </div>
