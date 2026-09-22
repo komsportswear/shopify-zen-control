@@ -2,6 +2,8 @@ import { ArrowRight, PenTool, Factory, Truck, Handshake } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/b2b-hero.jpg";
 import heroVideo from "@/assets/banner-personalizados.mp4";
+import heroVideoMobile from "@/assets/banner-personalizados-mobile.mp4";
+import heroVideoMobilePoster from "@/assets/banner-personalizados-mobile-poster.jpg";
 import { trackEvent } from "@/lib/analytics";
 
 const micro = [
@@ -17,10 +19,23 @@ interface Props {
 }
 
 const CustomHero = ({ onQuote, onProjects }: Props) => (
-  <section className="relative flex min-h-[640px] items-center overflow-hidden pt-20 lg:min-h-[78vh]">
-    <div className="absolute inset-0">
+  <section className="relative overflow-hidden bg-foreground pt-20 md:flex md:min-h-[640px] md:items-center lg:min-h-[78vh]">
+    <div className="relative aspect-square w-full md:absolute md:inset-0 md:aspect-auto">
       <video
-        className="h-full w-full object-cover object-center"
+        className="h-full w-full object-cover md:hidden"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        poster={heroVideoMobilePoster}
+        aria-hidden="true"
+        tabIndex={-1}
+      >
+        <source src={heroVideoMobile} type="video/mp4" />
+      </video>
+      <video
+        className="hidden h-full w-full object-cover object-center md:block"
         autoPlay
         muted
         loop
@@ -32,10 +47,10 @@ const CustomHero = ({ onQuote, onProjects }: Props) => (
       >
         <source src={heroVideo} type="video/mp4" />
       </video>
-      <div className="absolute inset-0 bg-gradient-to-r from-foreground/95 via-foreground/85 to-foreground/45" />
+      <div className="absolute inset-0 bg-gradient-to-b from-foreground/10 via-transparent to-foreground md:bg-gradient-to-r md:from-foreground/95 md:via-foreground/85 md:to-foreground/45" />
     </div>
 
-    <div className="container relative z-10 mx-auto px-6 pb-24 pt-10 sm:pb-20 lg:py-24">
+    <div className="container relative z-10 mx-auto -mt-px px-6 pb-24 pt-7 sm:pb-20 md:mt-0 md:py-16 lg:py-24">
       <div className="max-w-xl space-y-6 lg:max-w-2xl lg:space-y-8">
         <span className="block text-[0.7rem] font-semibold uppercase tracking-[0.25em] text-accent sm:text-sm">
           Productos personalizados KOM
