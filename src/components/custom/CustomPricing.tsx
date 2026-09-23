@@ -16,7 +16,7 @@ const CustomPricing = () => (
           </p>
         </div>
 
-        <div className="grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
           {priceTiers.map((t) => (
             <div key={t.range} className="bg-background px-5 py-6">
               <span className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-accent">{t.range}</span>

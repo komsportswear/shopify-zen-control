@@ -106,7 +106,8 @@ export const priceTiers = [
   { range: "6–49 UNIDADES", price: "Precio base del proyecto" },
   { range: "50–199 UNIDADES", price: "Mejor precio por unidad" },
   { range: "200–999 UNIDADES", price: "Descuento por volumen" },
-  { range: "1000+ UNIDADES", price: "Cotización especial" },
+  { range: "1000–5000 UNIDADES", price: "Cotización especial" },
+  { range: "+5000 UNIDADES", price: "Cotización especial" },
 ];
 
 
