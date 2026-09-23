@@ -44,35 +44,35 @@ export const products = [
   {
     name: "Jersey personalizado",
     short: "Jersey",
-    min: "Desde 10 unidades",
+    min: "Desde 1 unidad",
     description: "Jersey de ciclismo con tu diseño de extremo a extremo: sublimación total, corte técnico y opciones de tela según el clima.",
     image: prodJersey,
   },
   {
     name: "Bib shorts / pantalonetas",
     short: "Bib shorts",
-    min: "Desde 10 unidades",
+    min: "Desde 1 unidad",
     description: "Bib shorts y pantalonetas con badana, bandas de sujeción y personalización en piernas y tirantes.",
     image: prodBibshorts,
   },
   {
     name: "Camiseta de running",
     short: "Running",
-    min: "Desde 10 unidades",
+    min: "Desde 1 unidad",
     description: "Camisetas ligeras y transpirables para entrenamiento, competencia o eventos, con tu identidad completa.",
     image: prodRunning,
   },
   {
     name: "Uniformes deportivos",
     short: "Uniformes",
-    min: "Desde 10 unidades",
+    min: "Desde 1 unidad",
     description: "Sets completos para equipos y clubes, coherentes entre prendas y listos para repetir en futuras temporadas.",
     image: prodUniformes,
   },
   {
     name: "Skinsuits y enterizos",
     short: "Enterizos",
-    min: "Desde 10 unidades",
+    min: "Desde 1 unidad",
     description: "Enterizos de una sola pieza para competencia, con ajuste ceñido y diseño continuo sin cortes visibles.",
     image: prodChalecos,
   },
@@ -102,10 +102,12 @@ export const products = [
 
 /** Beneficio por volumen. Reemplazar por porcentajes reales cuando estén definidos. */
 export const priceTiers = [
-  { range: "10–49 UNIDADES", price: "Precio base del proyecto" },
+  { range: "1–5 UNIDADES", price: "Cotización según producto" },
+  { range: "6–49 UNIDADES", price: "Precio base del proyecto" },
   { range: "50–199 UNIDADES", price: "Mejor precio por unidad" },
   { range: "200–999 UNIDADES", price: "Descuento por volumen" },
-  { range: "1000+ UNIDADES", price: "Cotización especial" },
+  { range: "1000–5000 UNIDADES", price: "Cotización especial" },
+  { range: "+5000 UNIDADES", price: "Cotización especial" },
 ];
 
 
@@ -113,7 +115,7 @@ export const priceTiers = [
 export const faqs = [
   {
     q: "¿Cuál es la cantidad mínima?",
-    a: "Desde 10 unidades en ropa deportiva (jerseys, camisetas y uniformes). En accesorios como medias o gorras el mínimo varía según el producto.",
+    a: "Desde 1 unidad en ropa deportiva (jerseys, camisetas y uniformes). En accesorios como medias o gorras el mínimo varía según el producto.",
   },
   {
     q: "¿Cómo definimos las tallas?",
