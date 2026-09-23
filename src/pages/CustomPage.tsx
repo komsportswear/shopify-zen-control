@@ -106,7 +106,7 @@ const CustomPage = () => {
   useEffect(() => {
     document.title = "Ropa deportiva personalizada | KOM Sportswear";
     const desc =
-      "Uniformes y ropa deportiva personalizada desde 10 unidades para equipos, empresas, eventos y marcas. Diseño, producción y entrega con KOM Sportswear.";
+      "Uniformes y ropa deportiva personalizada desde 1 unidad para equipos, empresas, eventos y marcas. Diseño, producción y entrega con KOM Sportswear.";
     let meta = document.querySelector('meta[name="description"]');
     if (!meta) {
       meta = document.createElement("meta");

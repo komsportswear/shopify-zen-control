@@ -65,7 +65,7 @@ const CustomHero = ({ onQuote, onProjects }: Props) => (
         <p className="max-w-xl text-base text-background/80 sm:text-lg lg:text-xl">
           Uniformes, ropa deportiva y productos personalizados por KOM.
           <br className="hidden sm:block" />
-          <strong className="font-semibold text-background"> Desde 10 unidades en ropa deportiva.</strong>
+          <strong className="font-semibold text-background"> Desde 1 unidad en ropa deportiva.</strong>
         </p>
 
         <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
