@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowLeft, ArrowRight, CheckCircle2, Loader2, MessageCircle } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle2, MessageCircle } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -69,7 +69,6 @@ const CustomQuoteForm = ({ projectType, setProjectType }: Props) => {
     reference_link: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
   const [restored, setRestored] = useState(false);
   const stateRef = useRef({ step: 1, sent: false });
@@ -170,27 +169,27 @@ const CustomQuoteForm = ({ projectType, setProjectType }: Props) => {
     return Object.keys(e).length === 0;
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
-    setSending(true);
-    try {
-      await submitLead({
-        source: "landing-personalizados",
-        project_type: projectType,
-        products: selectedProducts.join(", "),
-        quantity_range: quantity,
-        design_status: design,
-        ...data,
-      });
-      trackEvent("complete_quote", { project_type: projectType, quantity_range: quantity });
-      localStorage.removeItem(STORAGE_KEY);
-      setSent(true);
-    } catch {
+
+    const lead = {
+      source: "landing-personalizados",
+      project_type: projectType,
+      products: selectedProducts.join(", "),
+      quantity_range: quantity,
+      design_status: design,
+      ...data,
+    };
+
+    setSent(true);
+    trackEvent("complete_quote", { project_type: projectType, quantity_range: quantity });
+    localStorage.removeItem(STORAGE_KEY);
+
+    void submitLead(lead).catch(() => {
       toast.error("Error al enviar. Intenta de nuevo.");
-    } finally {
-      setSending(false);
-    }
+      setSent(false);
+    });
   };
 
   const field = (
@@ -232,7 +231,7 @@ const CustomQuoteForm = ({ projectType, setProjectType }: Props) => {
               <CheckCircle2 className="mx-auto h-12 w-12 text-accent" />
               <h3 className="mt-5 text-2xl font-bold">¡Recibimos tu proyecto!</h3>
               <p className="mt-3 text-muted-foreground">
-                Nuestro equipo lo revisará y te contactará en menos de 24 horas hábiles.
+                 Nuestro equipo revisará tu proyecto y se pondrá en contacto contigo.
               </p>
               <Button
                 variant="kom"
@@ -368,8 +367,7 @@ const CustomQuoteForm = ({ projectType, setProjectType }: Props) => {
                     {field("city", "Ciudad", { required: true })}
                     {field("desired_date", "¿Para cuándo lo necesitas?", { required: true })}
                   </div>
-                  <Button variant="kom" size="lg" type="submit" disabled={sending} className="w-full py-6 text-base">
-                    {sending ? <Loader2 className="mr-2 h-5 w-5 animate-spin" /> : null}
+                  <Button variant="kom" size="lg" type="submit" className="w-full py-6 text-base">
                     RECIBIR MI PROPUESTA
                   </Button>
                   <p className="text-center text-sm text-muted-foreground">
