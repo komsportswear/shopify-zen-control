@@ -1,4 +1,4 @@
-type EventName =
+export type EventName =
   | "click_cta_hero"
   | "select_project_type"
   | "click_cta_diseno"
@@ -7,7 +7,14 @@ type EventName =
   | "click_whatsapp"
   | "view_projects"
   | "wizard_step_view"
-  | "abandon_step";
+  | "abandon_step"
+  | "white_label_language_change"
+  | "white_label_cta"
+  | "white_label_buyer_select"
+  | "white_label_product_select"
+  | "white_label_step_view"
+  | "white_label_complete"
+  | "white_label_abandon";
 
 declare global {
   interface Window {
