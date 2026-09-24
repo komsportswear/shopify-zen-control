@@ -122,7 +122,7 @@ const Option = ({ active, children, onClick }: { active: boolean; children: Reac
     variant="ghost"
     onClick={onClick}
     className={cn(
-      "h-auto min-h-14 justify-start whitespace-normal rounded-none border px-5 py-4 text-left text-sm font-medium",
+      "h-auto min-h-14 justify-start whitespace-normal rounded-none border px-5 py-4 text-left text-base font-medium leading-snug",
       active ? "border-accent bg-accent text-accent-foreground hover:bg-accent-hover" : "border-border bg-background hover:border-foreground hover:bg-background",
     )}
   >
@@ -243,7 +243,7 @@ const WhiteLabelQuoteForm = ({ language, buyerType, setBuyerType, requestedProdu
 
   const field = (id: keyof typeof data, required = false, type = "text", placeholder?: string) => (
     <div className="space-y-1.5">
-      <Label htmlFor={`white-label-${id}`} className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+      <Label htmlFor={`white-label-${id}`} className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
         {t.fields[id]} {required && <span className="text-accent">*</span>}
       </Label>
       <Input
@@ -258,7 +258,7 @@ const WhiteLabelQuoteForm = ({ language, buyerType, setBuyerType, requestedProdu
           if (errors[id]) setErrors((current) => ({ ...current, [id]: "" }));
         }}
       />
-      {errors[id] && <p className="text-xs text-destructive">{errors[id]}</p>}
+      {errors[id] && <p className="text-sm text-destructive">{errors[id]}</p>}
     </div>
   );
 
@@ -283,15 +283,15 @@ const WhiteLabelQuoteForm = ({ language, buyerType, setBuyerType, requestedProdu
             <div className="mt-10 border border-border p-5 sm:p-10">
               <div className="mb-3 flex items-baseline justify-between gap-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">{t.step} {step} {t.of} 5</p>
-                <p className="text-right text-xs text-muted-foreground">{t.steps[step - 1][1]}</p>
+                 <p className="text-right text-sm text-muted-foreground">{t.steps[step - 1][1]}</p>
               </div>
               <div className="mb-8 flex gap-2">{[1, 2, 3, 4, 5].map((item) => <span key={item} className={cn("h-1 flex-1", item <= step ? "bg-accent" : "bg-border")} />)}</div>
 
               {step === 1 && <div className="space-y-5"><h3 className="text-xl font-bold">{t.steps[0][0]}</h3><div className="grid gap-3 sm:grid-cols-2">{labels.map((item) => <Option key={item.value} active={buyerType === item.value} onClick={() => { setBuyerType(item.value); trackEvent("white_label_buyer_select", { buyer_type: item.value, language }); next(); }}>{item[language]}</Option>)}</div></div>}
               {step === 2 && <div className="space-y-5"><h3 className="text-xl font-bold">{t.steps[1][0]}</h3><div className="grid grid-cols-2 gap-3 sm:grid-cols-3">{productOptions.map((item) => <Option key={item.value} active={selectedProducts.includes(item.value)} onClick={() => { setSelectedProducts((current) => current.includes(item.value) ? current.filter((value) => value !== item.value) : [...current, item.value]); trackEvent("white_label_product_select", { product: item.value, language }); }}>{item[language]}</Option>)}</div></div>}
               {step === 3 && <div className="space-y-5"><h3 className="text-xl font-bold">{t.steps[2][0]}</h3><div className="grid grid-cols-2 gap-3 sm:grid-cols-3">{quantityRanges.map((range) => <Option key={range} active={quantity === range} onClick={() => { setQuantity(range); next(); }}>{range}</Option>)}</div></div>}
-              {step === 4 && <div className="space-y-5"><h3 className="text-xl font-bold">{t.steps[3][0]}</h3><div className="grid gap-3 sm:grid-cols-3">{designOptions.map((item) => <Option key={item.value} active={design === item.value} onClick={() => { setDesign(item.value); next(); }}>{item[language]}</Option>)}</div><div className="pt-2"><Label htmlFor="white-label-reference" className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">{t.reference}</Label><Input id="white-label-reference" type="url" value={referenceLink} onChange={(event) => setReferenceLink(event.target.value)} placeholder="https://" className="mt-1.5 h-12 rounded-none" /></div></div>}
-              {step === 5 && <form onSubmit={submit} noValidate className="space-y-5"><div><h3 className="text-xl font-bold">{t.steps[4][0]}</h3><p className="mt-2 text-sm text-muted-foreground">{t.almost}</p></div><div className="grid gap-4 sm:grid-cols-2">{field("name", true)}{field("company", true)}{field("role")}{field("email", true, "email")}{field("phone", true, "tel", "+1 555 000 0000")}{field("country", true)}{field("city", true)}{field("target_date", true)}<div className="sm:col-span-2">{field("website", false, "url", "https://")}</div></div><Button variant="kom" size="lg" type="submit" className="h-12 w-full rounded-none">{t.submit}</Button><p className="text-center text-sm text-muted-foreground">{t.note}</p></form>}
+              {step === 4 && <div className="space-y-5"><h3 className="text-xl font-bold">{t.steps[3][0]}</h3><div className="grid gap-3 sm:grid-cols-3">{designOptions.map((item) => <Option key={item.value} active={design === item.value} onClick={() => { setDesign(item.value); next(); }}>{item[language]}</Option>)}</div><div className="pt-2"><Label htmlFor="white-label-reference" className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">{t.reference}</Label><Input id="white-label-reference" type="url" value={referenceLink} onChange={(event) => setReferenceLink(event.target.value)} placeholder="https://" className="mt-1.5 h-12 rounded-none" /></div></div>}
+              {step === 5 && <form onSubmit={submit} noValidate className="space-y-5"><div><h3 className="text-xl font-bold">{t.steps[4][0]}</h3><p className="mt-2 text-base leading-relaxed text-muted-foreground">{t.almost}</p></div><div className="grid gap-4 sm:grid-cols-2">{field("name", true)}{field("company", true)}{field("role")}{field("email", true, "email")}{field("phone", true, "tel", "+1 555 000 0000")}{field("country", true)}{field("city", true)}{field("target_date", true)}<div className="sm:col-span-2">{field("website", false, "url", "https://")}</div></div><Button variant="kom" size="lg" type="submit" className="h-12 w-full rounded-none">{t.submit}</Button><p className="text-center text-base leading-relaxed text-muted-foreground">{t.note}</p></form>}
 
               <div className="mt-8 flex items-center justify-between">
                 <Button type="button" variant="ghost" onClick={() => setStep((current) => Math.max(1, current - 1))} className={cn("rounded-none text-muted-foreground", step === 1 && "invisible")}><ArrowLeft className="h-4 w-4" /> {t.back}</Button>

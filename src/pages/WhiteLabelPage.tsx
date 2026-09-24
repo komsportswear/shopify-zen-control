@@ -308,14 +308,14 @@ const WhiteLabelPage = () => {
                 <Button variant="kom-white" size="lg" className="h-14 rounded-none px-8" onClick={() => scrollTo("capabilities")}>{t.explore}</Button>
               </div>
               <div className="mt-9 grid grid-cols-2 gap-x-4 gap-y-4 border-t border-background/15 pt-6 lg:grid-cols-4">
-                {t.micro.map((label, index) => { const Icon = [PenTool, Shirt, Globe2, PackageCheck][index]; return <div key={label} className="flex items-start gap-2"><Icon className="mt-0.5 h-4 w-4 shrink-0 text-accent" /><span className="text-xs leading-snug text-background/70 sm:text-sm">{label}</span></div>; })}
+                {t.micro.map((label, index) => { const Icon = [PenTool, Shirt, Globe2, PackageCheck][index]; return <div key={label} className="flex items-start gap-2"><Icon className="mt-0.5 h-4 w-4 shrink-0 text-accent" /><span className="text-sm leading-relaxed text-background/75">{label}</span></div>; })}
               </div>
             </div>
           </div>
         </section>
 
         <section className="border-y border-background/10 bg-foreground py-9 text-background">
-          <div className="container mx-auto grid grid-cols-2 px-6 md:grid-cols-4">{t.stats.map(([value, label], index) => <div key={label} className={`px-4 py-5 ${index % 2 ? "border-l border-background/15" : ""} ${index < 2 ? "border-b border-background/15 md:border-b-0" : ""} md:border-l md:first:border-l-0`}><p className="text-3xl font-bold leading-none text-accent lg:text-5xl">{value}</p><p className="mt-2 text-[0.7rem] uppercase leading-snug tracking-[0.1em] text-background/65">{label}</p></div>)}</div>
+          <div className="container mx-auto grid grid-cols-2 px-6 md:grid-cols-4">{t.stats.map(([value, label], index) => <div key={label} className={`px-4 py-5 ${index % 2 ? "border-l border-background/15" : ""} ${index < 2 ? "border-b border-background/15 md:border-b-0" : ""} md:border-l md:first:border-l-0`}><p className="text-3xl font-bold leading-none text-accent lg:text-5xl">{value}</p><p className="mt-3 text-xs font-medium uppercase leading-relaxed tracking-[0.08em] text-background/75 sm:text-sm">{label}</p></div>)}</div>
         </section>
 
         <section id="capabilities" className="scroll-mt-24 bg-background py-20 lg:py-28">
@@ -337,7 +337,7 @@ const WhiteLabelPage = () => {
                       <span className="pt-1 text-xs font-bold text-accent">0{index + 1}</span>
                       <div>
                         <h3 className="text-lg font-bold">{title}</h3>
-                        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{text}</p>
+                        <p className="mt-2 text-base leading-relaxed text-muted-foreground">{text}</p>
                       </div>
                     </article>
                   ))}
@@ -367,12 +367,12 @@ const WhiteLabelPage = () => {
         <section className="bg-foreground py-20 text-background lg:py-28">
           <div className="container mx-auto grid gap-12 px-6 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
             <div><p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">{t.developmentEyebrow}</p><h2 className="mt-4 text-3xl font-bold tracking-tighter md:text-5xl">{t.developmentTitle}</h2><p className="mt-5 text-lg text-background/65">{t.developmentIntro}</p><Button variant="kom" size="lg" className="mt-8 rounded-none" onClick={() => goToQuote("development")}>{t.developmentCta}<ArrowRight /></Button></div>
-            <div className="grid gap-8 sm:grid-cols-3">{t.developmentCards.map(([title, text], index) => <div key={title} className="border-t-2 border-accent pt-5"><span className="text-xs font-bold uppercase tracking-[0.15em] text-accent">0{index + 1}</span><h3 className="mt-4 text-lg font-bold leading-tight">{title}</h3><p className="mt-3 text-sm leading-relaxed text-background/60">{text}</p></div>)}</div>
+            <div className="grid gap-8 sm:grid-cols-3">{t.developmentCards.map(([title, text], index) => <div key={title} className="border-t-2 border-accent pt-5"><span className="text-sm font-bold uppercase tracking-[0.12em] text-accent">0{index + 1}</span><h3 className="mt-4 text-lg font-bold leading-tight">{title}</h3><p className="mt-3 text-base leading-relaxed text-background/70">{text}</p></div>)}</div>
           </div>
         </section>
 
         <section id="quality" className="scroll-mt-24 bg-kom-surface py-20 lg:py-28">
-          <div className="container mx-auto grid gap-12 px-6 lg:grid-cols-2 lg:gap-20"><div><p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">{t.qualityEyebrow}</p><h2 className="mt-4 text-3xl font-bold tracking-tighter md:text-5xl">{t.qualityTitle}</h2><ul className="mt-8 grid gap-x-8 sm:grid-cols-2">{t.capabilities.map((item) => <li key={item} className="flex items-center gap-3 border-b border-border py-3 text-sm font-medium"><Check className="h-4 w-4 text-accent" />{item}</li>)}</ul><p className="mt-8 max-w-md text-muted-foreground">{t.qualityText}</p></div><div className="grid grid-cols-2 gap-2"><img src={printing} alt="KOM sportswear printing facility" className="col-span-2 h-56 w-full object-cover lg:h-72" /><img src={cutting} alt="Technical fabric cutting at KOM" className="h-44 w-full object-cover object-[50%_70%] lg:h-56" /><img src={stitching} alt="Industrial sportswear sewing at KOM" className="h-44 w-full object-cover lg:h-56" /></div></div>
+          <div className="container mx-auto grid gap-12 px-6 lg:grid-cols-2 lg:gap-20"><div><p className="text-sm font-semibold uppercase tracking-[0.14em] text-accent">{t.qualityEyebrow}</p><h2 className="mt-4 text-3xl font-bold tracking-tighter md:text-5xl">{t.qualityTitle}</h2><ul className="mt-8 grid gap-x-8 sm:grid-cols-2">{t.capabilities.map((item) => <li key={item} className="flex items-center gap-3 border-b border-border py-4 text-base font-medium"><Check className="h-4 w-4 text-accent" />{item}</li>)}</ul><p className="mt-8 max-w-md text-base leading-relaxed text-muted-foreground">{t.qualityText}</p></div><div className="grid grid-cols-2 gap-2"><img src={printing} alt="KOM sportswear printing facility" className="col-span-2 h-56 w-full object-cover lg:h-72" /><img src={cutting} alt="Technical fabric cutting at KOM" className="h-44 w-full object-cover object-[50%_70%] lg:h-56" /><img src={stitching} alt="Industrial sportswear sewing at KOM" className="h-44 w-full object-cover lg:h-56" /></div></div>
         </section>
 
         <section id="process" className="scroll-mt-24 bg-background py-20 lg:py-28">
@@ -387,7 +387,7 @@ const WhiteLabelPage = () => {
                   <div key={title} className="group">
                     <div className="flex h-12 w-12 items-center justify-center bg-accent text-base font-bold text-accent-foreground transition-transform group-hover:-translate-y-1">0{index + 1}</div>
                     <h3 className="mt-6 text-base font-bold leading-tight">{title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{text}</p>
+                    <p className="mt-2 text-base leading-relaxed text-muted-foreground">{text}</p>
                   </div>
                 ))}
               </div>
@@ -397,7 +397,7 @@ const WhiteLabelPage = () => {
                 <li key={title} className="relative">
                   <span className="absolute -left-[3.05rem] flex h-10 w-10 items-center justify-center bg-accent text-sm font-bold text-accent-foreground">0{index + 1}</span>
                   <h3 className="font-bold leading-tight">{title}</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">{text}</p>
+                  <p className="mt-1 text-base leading-relaxed text-muted-foreground">{text}</p>
                 </li>
               ))}
             </ol>
@@ -416,7 +416,7 @@ const WhiteLabelPage = () => {
                 <div key={range} className="min-w-[10rem] flex-1 shrink-0">
                   <div className="h-1 bg-accent" style={{ opacity: 0.35 + index * 0.13 }} />
                   <p className="mt-4 text-xl font-bold leading-none lg:text-2xl">{range}</p>
-                  <p className="mt-2 text-sm leading-snug text-background/60">{label}</p>
+                   <p className="mt-2 text-base leading-snug text-background/70">{label}</p>
                 </div>
               ))}
             </div>
@@ -426,12 +426,12 @@ const WhiteLabelPage = () => {
 
         <WhiteLabelQuoteForm language={language} buyerType={buyerType} setBuyerType={setBuyerType} requestedProduct={requestedProduct} />
 
-        <section id="faq" className="scroll-mt-24 bg-kom-surface py-20 lg:py-28"><div className="container mx-auto grid gap-12 px-6 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20"><h2 className="text-3xl font-bold tracking-tighter md:text-5xl">{t.faqTitle}</h2><Accordion type="single" collapsible>{t.faqs.map(([question, answer], index) => <AccordionItem key={question} value={`faq-${index}`}><AccordionTrigger className="text-left text-base font-semibold hover:no-underline">{question}</AccordionTrigger><AccordionContent className="leading-relaxed text-muted-foreground">{answer}</AccordionContent></AccordionItem>)}</Accordion></div></section>
+        <section id="faq" className="scroll-mt-24 bg-kom-surface py-20 lg:py-28"><div className="container mx-auto grid gap-12 px-6 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20"><h2 className="text-3xl font-bold tracking-tighter md:text-5xl">{t.faqTitle}</h2><Accordion type="single" collapsible>{t.faqs.map(([question, answer], index) => <AccordionItem key={question} value={`faq-${index}`}><AccordionTrigger className="text-left text-lg font-semibold hover:no-underline">{question}</AccordionTrigger><AccordionContent className="text-base leading-relaxed text-muted-foreground">{answer}</AccordionContent></AccordionItem>)}</Accordion></div></section>
 
-        <section className="bg-foreground py-20 text-center text-background lg:py-28"><div className="container mx-auto px-6"><h2 className="mx-auto max-w-4xl text-3xl font-bold tracking-tighter md:text-5xl">{t.finalTitle}</h2><p className="mx-auto mt-5 max-w-2xl text-background/65">{t.finalText}</p><div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row"><Button variant="kom" size="lg" className="h-14 rounded-none" onClick={() => goToQuote("final")}>{t.start}<ArrowRight /></Button><Button variant="kom-white" size="lg" className="h-14 rounded-none" onClick={() => { trackEvent("click_whatsapp"); window.open(WHITE_LABEL_WHATSAPP, "_blank"); }}><MessageCircle />{t.whatsapp}</Button></div></div></section>
+        <section className="bg-foreground py-20 text-center text-background lg:py-28"><div className="container mx-auto px-6"><h2 className="mx-auto max-w-4xl text-3xl font-bold tracking-tighter md:text-5xl">{t.finalTitle}</h2><p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-background/70">{t.finalText}</p><div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row"><Button variant="kom" size="lg" className="h-14 rounded-none" onClick={() => goToQuote("final")}>{t.start}<ArrowRight /></Button><Button variant="kom-white" size="lg" className="h-14 rounded-none" onClick={() => { trackEvent("click_whatsapp"); window.open(WHITE_LABEL_WHATSAPP, "_blank"); }}><MessageCircle />{t.whatsapp}</Button></div></div></section>
       </main>
 
-      <footer className="border-t border-background/10 bg-foreground text-background"><div className="container mx-auto grid gap-10 px-6 py-14 md:grid-cols-3"><div><img src={komLogo} alt="KOM Sportswear" className="h-20" /><p className="mt-4 max-w-sm text-sm leading-relaxed text-background/60">{t.footerText}</p></div><div><h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-background/40">{t.navigation}</h3><div className="mt-4 space-y-2">{t.nav.slice(0, 4).map(([href, label]) => <a key={href} href={href} className="block text-sm text-background/70 hover:text-accent">{label}</a>)}</div></div><div><h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-background/40">{t.contact}</h3><div className="mt-4 space-y-3"><a href="https://wa.me/573107269301" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-background/70 hover:text-accent"><MessageCircle className="h-4 w-4" />Camila Andrade</a><a href="mailto:ventas@komsportswear.com" className="block text-sm text-background/70 hover:text-accent">ventas@komsportswear.com</a></div></div></div><div className="container mx-auto border-t border-background/10 px-6 py-7 text-xs text-background/40">© {new Date().getFullYear()} KOM Sportswear. {t.rights}</div></footer>
+      <footer className="border-t border-background/10 bg-foreground text-background"><div className="container mx-auto grid gap-10 px-6 py-14 md:grid-cols-3"><div><img src={komLogo} alt="KOM Sportswear" className="h-20" /><p className="mt-4 max-w-sm text-base leading-relaxed text-background/70">{t.footerText}</p></div><div><h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-background/55">{t.navigation}</h3><div className="mt-4 space-y-3">{t.nav.slice(0, 4).map(([href, label]) => <a key={href} href={href} className="block text-base text-background/75 hover:text-accent">{label}</a>)}</div></div><div><h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-background/55">{t.contact}</h3><div className="mt-4 space-y-3"><a href="https://wa.me/573107269301" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-base text-background/75 hover:text-accent"><MessageCircle className="h-4 w-4" />Camila Andrade</a><a href="mailto:ventas@komsportswear.com" className="block text-base text-background/75 hover:text-accent">ventas@komsportswear.com</a></div></div></div><div className="container mx-auto border-t border-background/10 px-6 py-7 text-sm text-background/55">© {new Date().getFullYear()} KOM Sportswear. {t.rights}</div></footer>
 
       <div aria-hidden={!showBar} className={`fixed inset-x-0 bottom-0 z-40 flex gap-2 border-t border-border bg-background p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] transition-transform duration-300 motion-reduce:transition-none md:hidden ${showBar ? "translate-y-0" : "pointer-events-none translate-y-full"}`}><Button variant="kom" className="h-12 flex-1 rounded-none font-bold" onClick={() => goToQuote("mobile-sticky")}>{localStorage.getItem(WHITE_LABEL_STORAGE_KEY) ? (language === "en" ? "CONTINUE PROJECT" : "CONTINUAR PROYECTO") : t.start}</Button><Button variant="outline" size="icon" aria-label={t.whatsapp} className="h-12 w-12 rounded-none" onClick={() => window.open(WHITE_LABEL_WHATSAPP, "_blank")}><MessageCircle /></Button></div>
       <div className="h-20 md:hidden" />
