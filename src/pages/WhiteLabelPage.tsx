@@ -367,7 +367,7 @@ const WhiteLabelPage = () => {
         <section className="bg-foreground py-20 text-background lg:py-28">
           <div className="container mx-auto grid gap-12 px-6 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
             <div><p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">{t.developmentEyebrow}</p><h2 className="mt-4 text-3xl font-bold tracking-tighter md:text-5xl">{t.developmentTitle}</h2><p className="mt-5 text-lg text-background/65">{t.developmentIntro}</p><Button variant="kom" size="lg" className="mt-8 rounded-none" onClick={() => goToQuote("development")}>{t.developmentCta}<ArrowRight /></Button></div>
-            <div className="divide-y divide-background/15 border-y border-background/15">{t.developmentCards.map(([title, text], index) => <div key={title} className="grid gap-3 py-7 sm:grid-cols-[4rem_1fr]"><span className="text-sm font-bold text-accent">0{index + 1}</span><div><h3 className="text-xl font-bold">{title}</h3><p className="mt-2 text-sm leading-relaxed text-background/60">{text}</p></div></div>)}</div>
+            <div className="grid gap-8 sm:grid-cols-3">{t.developmentCards.map(([title, text], index) => <div key={title} className="border-t-2 border-accent pt-5"><span className="text-xs font-bold uppercase tracking-[0.15em] text-accent">0{index + 1}</span><h3 className="mt-4 text-lg font-bold leading-tight">{title}</h3><p className="mt-3 text-sm leading-relaxed text-background/60">{text}</p></div>)}</div>
           </div>
         </section>
 
@@ -376,10 +376,53 @@ const WhiteLabelPage = () => {
         </section>
 
         <section id="process" className="scroll-mt-24 bg-background py-20 lg:py-28">
-          <div className="container mx-auto px-6"><p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">{t.processEyebrow}</p><h2 className="mt-4 text-3xl font-bold tracking-tighter md:text-5xl">{t.processTitle}</h2><p className="mt-4 text-muted-foreground">{t.processIntro}</p><div className="mt-12 grid border-l border-t border-border sm:grid-cols-2 lg:grid-cols-3">{t.steps.map(([title, text], index) => <article key={title} className="min-h-48 border-b border-r border-border p-7"><span className="text-sm font-bold text-accent">0{index + 1}</span><h3 className="mt-8 text-xl font-bold">{title}</h3><p className="mt-3 text-sm leading-relaxed text-muted-foreground">{text}</p></article>)}</div></div>
+          <div className="container mx-auto px-6">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">{t.processEyebrow}</p>
+            <h2 className="mt-4 text-3xl font-bold tracking-tighter md:text-5xl">{t.processTitle}</h2>
+            <p className="mt-4 text-muted-foreground">{t.processIntro}</p>
+            <div className="relative mt-14 hidden md:block">
+              <div className="absolute left-0 right-0 top-6 h-px bg-border" />
+              <div className="relative grid grid-cols-3 gap-x-8 gap-y-12 lg:grid-cols-6">
+                {t.steps.map(([title, text], index) => (
+                  <div key={title} className="group">
+                    <div className="flex h-12 w-12 items-center justify-center bg-accent text-base font-bold text-accent-foreground transition-transform group-hover:-translate-y-1">0{index + 1}</div>
+                    <h3 className="mt-6 text-base font-bold leading-tight">{title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <ol className="relative mt-10 space-y-8 border-l border-border pl-8 md:hidden">
+              {t.steps.map(([title, text], index) => (
+                <li key={title} className="relative">
+                  <span className="absolute -left-[3.05rem] flex h-10 w-10 items-center justify-center bg-accent text-sm font-bold text-accent-foreground">0{index + 1}</span>
+                  <h3 className="font-bold leading-tight">{title}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">{text}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+
         </section>
 
-        <section className="bg-foreground py-16 text-background lg:py-20"><div className="container mx-auto grid gap-10 px-6 lg:grid-cols-[0.7fr_1.3fr] lg:items-center lg:gap-16"><div><h2 className="text-3xl font-bold tracking-tighter md:text-5xl">{t.volumeTitle}</h2><p className="mt-5 max-w-lg text-background/65">{t.volumeText}</p></div><div className="grid border-l border-t border-background/15 sm:grid-cols-2 lg:grid-cols-3">{t.ranges.map(([range, label]) => <div key={range} className="border-b border-r border-background/15 p-5"><span className="text-sm font-bold text-accent">{range}</span><p className="mt-2 text-sm text-background/65">{label}</p></div>)}</div></div></section>
+        <section className="bg-foreground py-16 text-background lg:py-20">
+          <div className="container mx-auto px-6">
+            <div className="max-w-3xl">
+              <h2 className="text-3xl font-bold tracking-tighter md:text-5xl">{t.volumeTitle}</h2>
+              <p className="mt-5 text-background/65">{t.volumeText}</p>
+            </div>
+            <div className="mt-12 flex gap-4 overflow-x-auto pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:gap-6 lg:overflow-visible">
+              {t.ranges.map(([range, label], index) => (
+                <div key={range} className="min-w-[10rem] flex-1 shrink-0">
+                  <div className="h-1 bg-accent" style={{ opacity: 0.35 + index * 0.13 }} />
+                  <p className="mt-4 text-xl font-bold leading-none lg:text-2xl">{range}</p>
+                  <p className="mt-2 text-sm leading-snug text-background/60">{label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
 
         <WhiteLabelQuoteForm language={language} buyerType={buyerType} setBuyerType={setBuyerType} requestedProduct={requestedProduct} />
 
