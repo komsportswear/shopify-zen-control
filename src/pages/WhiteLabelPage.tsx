@@ -320,12 +320,33 @@ const WhiteLabelPage = () => {
 
         <section id="capabilities" className="scroll-mt-24 bg-background py-20 lg:py-28">
           <div className="container mx-auto px-6">
-            <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-              <div><p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">{t.whyEyebrow}</p><h2 className="mt-4 text-3xl font-bold tracking-tighter md:text-5xl">{t.whyTitle}</h2><p className="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground">{t.whyIntro}</p></div>
-              <div className="grid border-l border-t border-border sm:grid-cols-2">{t.reasons.map(([title, text], index) => <article key={title} className="border-b border-r border-border p-7 lg:p-9"><span className="text-xs font-bold text-accent">0{index + 1}</span><h3 className="mt-6 text-xl font-bold">{title}</h3><p className="mt-3 text-sm leading-relaxed text-muted-foreground">{text}</p></article>)}</div>
+            <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:gap-20">
+              <div className="relative">
+                <img src={stitching} alt="KOM private-label manufacturing" className="h-[22rem] w-full object-cover lg:h-[34rem]" />
+                <span className="absolute bottom-0 left-0 bg-accent px-5 py-3 text-[0.65rem] font-bold uppercase tracking-[0.18em] text-accent-foreground sm:text-xs">
+                  {language === "en" ? "Full-package manufacturing · Colombia" : "Manufactura full-package · Colombia"}
+                </span>
+              </div>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">{t.whyEyebrow}</p>
+                <h2 className="mt-4 text-3xl font-bold tracking-tighter md:text-5xl">{t.whyTitle}</h2>
+                <p className="mt-5 max-w-lg text-lg leading-relaxed text-muted-foreground">{t.whyIntro}</p>
+                <div className="mt-10 divide-y divide-border border-t border-border">
+                  {t.reasons.map(([title, text], index) => (
+                    <article key={title} className="flex gap-5 py-6">
+                      <span className="pt-1 text-xs font-bold text-accent">0{index + 1}</span>
+                      <div>
+                        <h3 className="text-lg font-bold">{title}</h3>
+                        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{text}</p>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>
+
 
         <section className="bg-kom-surface py-20 lg:py-28">
           <div className="container mx-auto px-6"><h2 className="mb-12 max-w-2xl text-3xl font-bold tracking-tighter md:text-5xl">{t.solutionsTitle}</h2><div className="grid border-l border-t border-border md:grid-cols-2">{buyerTypes.map((item, index) => <Button key={item.value} variant="ghost" onClick={() => { setBuyerType(item.value); trackEvent("white_label_buyer_select", { buyer_type: item.value, language, source: "solution" }); scrollTo("quote"); }} className="group h-auto min-h-52 items-start justify-between whitespace-normal rounded-none border-b border-r border-border bg-background p-7 text-left hover:bg-foreground hover:text-background lg:p-10"><div><span className="text-xs font-bold text-accent">0{index + 1}</span><h3 className="mt-6 text-2xl font-bold uppercase">{item[language]}</h3><p className="mt-3 max-w-md font-normal leading-relaxed text-muted-foreground group-hover:text-background/65">{t.solutionText[index]}</p></div><ArrowRight className="mt-1 h-5 w-5 shrink-0 text-accent" /></Button>)}</div></div>
