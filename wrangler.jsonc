@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "shopify-zen-control",
+  "name": "komsportswear",
   "compatibility_date": "2026-03-19",
   "assets": {
     "directory": "./dist",
